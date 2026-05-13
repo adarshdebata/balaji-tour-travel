@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Calculator, MapPin, Navigation, Clock, IndianRupee } from "lucide-react";
 import { PRICING_PER_KM, ROUTES, SOURCES } from "@/data/routes";
 import { formatNumber, formatPrice } from "@/lib/utils";
+import Link from "next/link";
 
 const VEHICLE_OPTIONS = Object.keys(PRICING_PER_KM);
 
@@ -200,12 +201,12 @@ export function EnquiryEstimator() {
                   </div>
                 )}
 
-                <a
+                <Link
                   href="/contact"
                   className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-saffron-500 px-7 py-3.5 font-medium text-white shadow-lg transition-all hover:bg-saffron-400"
                 >
                   Confirm booking with our team
-                </a>
+                </Link>
               </div>
             )}
           </motion.div>
