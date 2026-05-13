@@ -1,0 +1,58 @@
+import type { Testimonial } from "@/types";
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: "t1",
+    name: "Anjali Sharma",
+    location: "Noida",
+    rating: 5,
+    text: "We booked a 20-seater Tempo Traveller for our family trip to Manali. The driver was professional, the coach was spotless, and the AC worked flawlessly even on the climb. Genuinely the best service we've used in years.",
+    tripType: "Family Tour — Manali",
+    date: "March 2025",
+  },
+  {
+    id: "t2",
+    name: "Rohit Verma",
+    location: "Delhi",
+    rating: 5,
+    text: "Our company offsite for 40 people went off without a hitch thanks to the Volvo coach. Wi-Fi worked, refreshments were arranged, and the team at Balaji handled every change request without complaint.",
+    tripType: "Corporate Offsite — Jim Corbett",
+    date: "January 2025",
+  },
+  {
+    id: "t3",
+    name: "Pandit Suresh Tiwari",
+    location: "Ghaziabad",
+    rating: 5,
+    text: "Char Dham yatra is not an easy journey, but the team made it feel effortless. The driver knew every shortcut, every safe stop, every good dhaba. Bahut hi achi seva. Highly recommended.",
+    tripType: "Pilgrimage — Char Dham",
+    date: "September 2024",
+  },
+  {
+    id: "t4",
+    name: "Priya & Karan",
+    location: "Gurugram",
+    rating: 5,
+    text: "Hired the Urbania for our wedding guest pickups. Honestly, the coach felt more luxurious than some hotels we've been in. Our guests kept asking who we booked with — so here it is, Balaji Travels.",
+    tripType: "Wedding Travel — Delhi NCR",
+    date: "November 2024",
+  },
+  {
+    id: "t5",
+    name: "Amit Khanna",
+    location: "Faridabad",
+    rating: 5,
+    text: "Used their Fortuner for a Leh-Ladakh trip. Vehicle was in mint condition, the driver was Ladakh-experienced, and the pricing was completely transparent. No surprises, no last-minute calls.",
+    tripType: "Adventure Tour — Leh Ladakh",
+    date: "July 2024",
+  },
+  {
+    id: "t6",
+    name: "Meera Iyer",
+    location: "Noida",
+    rating: 5,
+    text: "Airport transfers, school picnics, and now a Rajasthan trip — we've used them for three years. What I love most is that you can actually reach a human on the phone at any hour.",
+    tripType: "Repeat Customer",
+    date: "February 2025",
+  },
+];
