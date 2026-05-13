@@ -10,6 +10,9 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+
+  basePath: "/balaji-tour-travel",
+  assetPrefix: "/balaji-tour-travel/",
 };
 
 export default nextConfig;
