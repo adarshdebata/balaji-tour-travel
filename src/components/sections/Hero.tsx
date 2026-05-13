@@ -138,7 +138,7 @@ export function Hero() {
                 <div
                   className="h-full w-full bg-cover bg-center"
                   style={{
-                    backgroundImage: `url("https://images.unsplash.com/photo-1605290949829-99f2bff7a6e6?w=1200&q=80")`,
+                    backgroundImage: `url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80")`,
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-950/40 via-transparent to-transparent" />
