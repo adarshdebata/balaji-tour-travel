@@ -5,7 +5,7 @@ export const DESTINATIONS: Destination[] = [
     id: "rajasthan",
     name: "Rajasthan",
     region: "Royal Desert State",
-    image: "https://images.unsplash.com/photo-1599661046827-dacde6976549?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1600&auto=format&fit=crop",
     shortDescription:
       "Forts that touch the sky, palaces that hum with history, and the endless gold of the Thar. Rajasthan is theatre, written in stone.",
     locations: ["Jaipur", "Udaipur", "Jaisalmer", "Jodhpur", "Pushkar", "Mount Abu", "Bikaner"],
@@ -27,7 +27,7 @@ export const DESTINATIONS: Destination[] = [
     id: "jammu-kashmir",
     name: "Jammu & Kashmir",
     region: "Paradise on Earth",
-    image: "https://images.unsplash.com/photo-1566837497312-7be7ee2e84e7?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1600&auto=format&fit=crop",
     shortDescription:
       "Shikaras drifting on Dal Lake, meadows that stretch toward Pir Panjal, and apple orchards in October light.",
     locations: ["Srinagar", "Gulmarg", "Pahalgam", "Sonmarg", "Leh", "Nubra Valley"],
