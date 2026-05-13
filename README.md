@@ -1,4 +1,4 @@
-# Balaji Tour & Travel Line
+<!-- # Balaji Tour & Travel Line
 
 > *Unveiling Luxury, Crafting Journeys*
 
@@ -257,4 +257,4 @@ Proprietary. © Balaji Tour & Travel Line. Source code transferred to the client
 
 **Fonts look wrong?** Make sure you have an internet connection on first build — `next/font` fetches fonts from Google Fonts at build time and self-hosts them.
 
-**TypeScript errors after editing data files?** Check `src/types/index.ts` for the expected shape, or just look at the existing entries as templates.
+**TypeScript errors after editing data files?** Check `src/types/index.ts` for the expected shape, or just look at the existing entries as templates. -->
