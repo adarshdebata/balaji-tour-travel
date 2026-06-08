@@ -16,7 +16,7 @@ export const DESTINATIONS: Destination[] = [
     id: "himachal",
     name: "Himachal Pradesh",
     region: "Land of the Snowline",
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1565459667879-4c7234fc4beb?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     shortDescription:
       "Pine forests, glacial rivers, and high mountain passes. The Himalayas at their most accessible and most cinematic.",
     locations: ["Manali", "Shimla", "Dharamshala", "Spiti", "Kasol", "Dalhousie", "Kullu"],
@@ -27,7 +27,7 @@ export const DESTINATIONS: Destination[] = [
     id: "jammu-kashmir",
     name: "Jammu & Kashmir",
     region: "Paradise on Earth",
-    image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     shortDescription:
       "Shikaras drifting on Dal Lake, meadows that stretch toward Pir Panjal, and apple orchards in October light.",
     locations: ["Srinagar", "Gulmarg", "Pahalgam", "Sonmarg", "Leh", "Nubra Valley"],
@@ -38,7 +38,7 @@ export const DESTINATIONS: Destination[] = [
     id: "char-dham",
     name: "Char Dham Yatra",
     region: "Sacred Pilgrimage Circuit",
-    image: "https://images.unsplash.com/photo-1626621331169-5f34be280ed9?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1706790574525-d218c4c52b5c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     shortDescription:
       "Yamunotri, Gangotri, Kedarnath, Badrinath — the four abodes carved into Himalayan rock. A journey of devotion done with care.",
     locations: ["Yamunotri", "Gangotri", "Kedarnath", "Badrinath", "Haridwar", "Rishikesh"],
@@ -49,7 +49,7 @@ export const DESTINATIONS: Destination[] = [
     id: "uttarakhand",
     name: "Uttarakhand",
     region: "Devbhoomi",
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1650342518618-fdeaae0ef4f0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     shortDescription:
       "Where the Ganga begins, where forests breathe, and where every hill town carries the scent of cedar and snow.",
     locations: ["Nainital", "Mussoorie", "Auli", "Rishikesh", "Jim Corbett", "Ranikhet", "Almora"],
