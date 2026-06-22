@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { CONTACT, NAV_ITEMS } from "@/constants/site";
 import { Logo } from "@/components/ui/Logo";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -38,7 +39,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-cream/85 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
+          ? "bg-cream/85 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.04)] dark:bg-ink-950/85 dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)]"
           : "bg-transparent",
       )}
     >
@@ -65,8 +66,10 @@ export function Navbar() {
                     <button
                       className={cn(
                         "flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium",
-                        "transition-colors hover:text-saffron-700",
-                        isActive ? "text-saffron-700" : "text-ink-700",
+                        "transition-colors hover:text-saffron-700 dark:hover:text-saffron-300",
+                        isActive
+                          ? "text-saffron-700 dark:text-saffron-300"
+                          : "text-ink-700 dark:text-ink-200",
                       )}
                     >
                       {item.label}
@@ -86,15 +89,16 @@ export function Navbar() {
                           transition={{ duration: 0.18 }}
                           className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
                         >
-                          <div className="min-w-[220px] rounded-2xl bg-white p-2 shadow-2xl ring-1 ring-ink-200/60">
+                          <div className="min-w-[220px] rounded-2xl bg-white p-2 shadow-2xl ring-1 ring-ink-200/60 dark:bg-ink-900 dark:ring-white/10">
                             {item.children.map((child) => (
                               <Link
                                 key={child.href}
                                 href={child.href}
                                 className={cn(
                                   "block rounded-xl px-4 py-3 text-sm font-medium transition-colors",
-                                  "hover:bg-saffron-50 hover:text-saffron-700",
-                                  pathname === child.href && "bg-saffron-50 text-saffron-700",
+                                  "hover:bg-saffron-50 hover:text-saffron-700 dark:hover:bg-saffron-500/10 dark:hover:text-saffron-300",
+                                  pathname === child.href &&
+                                    "bg-saffron-50 text-saffron-700 dark:bg-saffron-500/10 dark:text-saffron-300",
                                 )}
                               >
                                 {child.label}
@@ -114,8 +118,10 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                      "hover:text-saffron-700",
-                      isActive ? "text-saffron-700" : "text-ink-700",
+                      "hover:text-saffron-700 dark:hover:text-saffron-300",
+                      isActive
+                        ? "text-saffron-700 dark:text-saffron-300"
+                        : "text-ink-700 dark:text-ink-200",
                     )}
                   >
                     {item.label}
@@ -127,6 +133,7 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <a
               href={`tel:${CONTACT.phonePrimary.replace(/\s/g, "")}`}
               className="btn-primary !py-2.5 !px-5 text-sm"
@@ -136,14 +143,17 @@ export function Navbar() {
             </a>
           </div>
 
-          {/* Mobile burger */}
-          <button
-            onClick={() => setMobileOpen(true)}
-            className="lg:hidden flex h-11 w-11 items-center justify-center rounded-full bg-white/70 ring-1 ring-ink-200 backdrop-blur"
-            aria-label="Open menu"
-          >
-            <Menu className="h-5 w-5 text-ink-900" />
-          </button>
+          {/* Mobile: theme toggle + burger */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileOpen(true)}
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/70 ring-1 ring-ink-200 backdrop-blur dark:bg-white/10 dark:ring-white/15"
+              aria-label="Open menu"
+            >
+              <Menu className="h-5 w-5 text-ink-900 dark:text-cream" />
+            </button>
+          </div>
         </nav>
       </div>
 
@@ -164,13 +174,13 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 240 }}
-              className="lg:hidden fixed inset-y-0 right-0 z-50 w-[88%] max-w-sm bg-cream shadow-2xl"
+              className="lg:hidden fixed inset-y-0 right-0 z-50 w-[88%] max-w-sm bg-cream shadow-2xl dark:bg-ink-950"
             >
               <div className="flex h-20 items-center justify-between px-6">
                 <Logo />
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white ring-1 ring-ink-200"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white ring-1 ring-ink-200 dark:bg-white/10 dark:ring-white/15 dark:text-cream"
                   aria-label="Close menu"
                 >
                   <X className="h-5 w-5" />
@@ -188,13 +198,13 @@ export function Navbar() {
                   ))}
                 </ul>
 
-                <div className="mt-8 border-t border-ink-200 pt-6">
-                  <p className="text-xs uppercase tracking-[0.25em] text-saffron-700">
+                <div className="mt-8 border-t border-ink-200 pt-6 dark:border-white/10">
+                  <p className="text-xs uppercase tracking-[0.25em] text-saffron-700 dark:text-saffron-300">
                     Reach us
                   </p>
                   <a
                     href={`tel:${CONTACT.phonePrimary.replace(/\s/g, "")}`}
-                    className="mt-3 block font-display text-2xl text-ink-900"
+                    className="mt-3 block font-display text-2xl text-ink-900 dark:text-cream"
                   >
                     {CONTACT.phonePrimary}
                   </a>
@@ -229,7 +239,7 @@ function MobileNavItem({
       <li>
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-ink-900 hover:bg-saffron-50"
+          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-medium text-ink-900 hover:bg-saffron-50 dark:text-cream dark:hover:bg-white/5"
         >
           {item.label}
           <ChevronDown
@@ -255,8 +265,8 @@ function MobileNavItem({
                     className={cn(
                       "block rounded-xl px-4 py-2.5 text-sm",
                       pathname === child.href
-                        ? "bg-saffron-50 text-saffron-700"
-                        : "text-ink-700",
+                        ? "bg-saffron-50 text-saffron-700 dark:bg-saffron-500/10 dark:text-saffron-300"
+                        : "text-ink-700 dark:text-ink-300",
                     )}
                   >
                     {child.label}
@@ -277,8 +287,8 @@ function MobileNavItem({
         className={cn(
           "block rounded-xl px-4 py-3 text-base font-medium",
           pathname === item.href
-            ? "bg-saffron-50 text-saffron-700"
-            : "text-ink-900 hover:bg-saffron-50",
+            ? "bg-saffron-50 text-saffron-700 dark:bg-saffron-500/10 dark:text-saffron-300"
+            : "text-ink-900 hover:bg-saffron-50 dark:text-cream dark:hover:bg-white/5",
         )}
       >
         {item.label}

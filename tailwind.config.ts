@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -60,6 +61,12 @@ const config: Config = {
         "marquee": "marquee 30s linear infinite",
         "float": "float 6s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
+        "skeleton": "skeleton 1.6s ease-in-out infinite",
+        "wheel-spin": "wheelSpin 0.7s linear infinite",
+        "road-dash": "roadDash 0.6s linear infinite",
+        "bus-bob": "busBob 0.9s ease-in-out infinite",
+        "scenery": "scenery 5s linear infinite",
+        "exhaust": "exhaust 1.2s ease-out infinite",
       },
       keyframes: {
         fadeUp: {
@@ -81,6 +88,36 @@ const config: Config = {
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
+        },
+        // Sweeping highlight for image/content skeletons.
+        skeleton: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
+        // Bus loader: wheels rotate.
+        wheelSpin: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        // Bus loader: road centre-line scrolls toward the viewer.
+        roadDash: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-48px)" },
+        },
+        // Bus loader: gentle suspension bob.
+        busBob: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-2.5px)" },
+        },
+        // Bus loader: hills drift past (320 user-unit tile, repeated twice).
+        scenery: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-320px)" },
+        },
+        // Bus loader: exhaust puffs.
+        exhaust: {
+          "0%": { opacity: "0.5", transform: "translate(0,0) scale(0.6)" },
+          "100%": { opacity: "0", transform: "translate(-22px,-10px) scale(1.5)" },
         },
       },
       backgroundImage: {

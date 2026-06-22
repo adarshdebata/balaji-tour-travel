@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const VEHICLE_OPTIONS = Object.keys(PRICING_PER_KM);
 
-export function EnquiryEstimator() {
+export function EnquiryEstimator({ showHeading = true }: { showHeading?: boolean }) {
   const [source, setSource] = useState<string>(SOURCES[0]);
   const [destination, setDestination] = useState<string>("");
   const [vehicle, setVehicle] = useState<string>(VEHICLE_OPTIONS[3]);
@@ -45,18 +45,20 @@ export function EnquiryEstimator() {
   return (
     <section id="enquiry" className="relative py-24 lg:py-32 bg-white/50">
       <div className="container-padded">
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="eyebrow justify-center">Quick Estimator</div>
-          <h2 className="display-text mt-6 text-4xl sm:text-5xl lg:text-6xl">
-            Plan your trip in 30 seconds.
-          </h2>
-          <p className="mt-5 text-base text-ink-600 sm:text-lg">
-            Pick a route, choose a vehicle, see what your journey looks like
-            before you call.
-          </p>
-        </div>
+        {showHeading && (
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="eyebrow justify-center">Quick Estimator</div>
+            <h2 className="display-text mt-6 text-4xl sm:text-5xl lg:text-6xl">
+              Plan your trip in 30 seconds.
+            </h2>
+            <p className="mt-5 text-base text-ink-600 sm:text-lg">
+              Pick a route, choose a vehicle, see what your journey looks like
+              before you call.
+            </p>
+          </div>
+        )}
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <div className={`grid grid-cols-1 gap-8 lg:grid-cols-12 ${showHeading ? "mt-16" : ""}`}>
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

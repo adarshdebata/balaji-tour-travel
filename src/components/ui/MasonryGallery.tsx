@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -17,20 +17,68 @@ interface MasonryGalleryProps {
   className?: string;
 }
 
+/**
+ * A single masonry tile. Reserves its box via the image aspect ratio (so there
+ * is no layout shift), shows a shimmer skeleton until the image has decoded,
+ * then fades the image in to avoid an abrupt pop-in.
+ */
+function GalleryTile({
+  img,
+  index,
+  onOpen,
+}: {
+  img: GalleryItem;
+  index: number;
+  onOpen: () => void;
+}) {
+  const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Cached images can finish before React attaches onLoad — catch that here.
+  useEffect(() => {
+    if (imgRef.current?.complete) setLoaded(true);
+  }, []);
+
+  return (
+    <motion.button
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4, delay: (index % 8) * 0.05 }}
+      onClick={onOpen}
+      className="group relative block w-full overflow-hidden rounded-2xl bg-ink-100 transition-shadow hover:shadow-2xl"
+      aria-label={`View ${img.alt}`}
+    >
+      {/* Skeleton placeholder — visible until the image is fully loaded. */}
+      {!loaded && <span aria-hidden="true" className="skeleton absolute inset-0 z-10" />}
+
+      <Image
+        ref={imgRef}
+        src={img.src}
+        alt={img.alt}
+        width={800}
+        height={1000}
+        sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        data-loaded={loaded}
+        className="img-fade-in w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+    </motion.button>
+  );
+}
+
 export function MasonryGallery({ images, className }: MasonryGalleryProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   if (images.length === 0) {
     return (
       <div className="rounded-3xl border-2 border-dashed border-ink-200 p-16 text-center">
-        <p className="font-display text-2xl text-ink-700">
-          No images yet.
-        </p>
+        <p className="font-display text-2xl text-ink-700">No images yet.</p>
         <p className="mt-2 text-sm text-ink-500">
           Drop images into{" "}
-          <code className="rounded bg-ink-100 px-2 py-1 text-xs">
-            /public/gallery
-          </code>{" "}
+          <code className="rounded bg-ink-100 px-2 py-1 text-xs">/public/gallery</code>{" "}
           and they&apos;ll appear here automatically.
         </p>
       </div>
@@ -39,9 +87,7 @@ export function MasonryGallery({ images, className }: MasonryGalleryProps) {
 
   const close = () => setLightboxIndex(null);
   const prev = () =>
-    setLightboxIndex((i) =>
-      i === null ? null : (i - 1 + images.length) % images.length,
-    );
+    setLightboxIndex((i) => (i === null ? null : (i - 1 + images.length) % images.length));
   const next = () =>
     setLightboxIndex((i) => (i === null ? null : (i + 1) % images.length));
 
@@ -54,25 +100,7 @@ export function MasonryGallery({ images, className }: MasonryGalleryProps) {
         )}
       >
         {images.map((img, i) => (
-          <motion.button
-            key={img.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
-            onClick={() => setLightboxIndex(i)}
-            className="group relative block w-full overflow-hidden rounded-2xl bg-ink-100 transition-shadow hover:shadow-2xl"
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={800}
-              height={1000}
-              sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-          </motion.button>
+          <GalleryTile key={img.id} img={img} index={i} onOpen={() => setLightboxIndex(i)} />
         ))}
       </div>
 

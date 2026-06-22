@@ -18,9 +18,15 @@ export interface Destination {
   region: string;
   image: string;
   shortDescription: string;
+  /** Longer story shown on the immersive detail view, one entry per paragraph. */
+  longDescription: string[];
+  /** Signature experiences / reasons to go. */
+  highlights: string[];
   locations: string[];
   bestTime: string;
   duration: string;
+  /** Indicative starting price for the trip, in INR. */
+  priceFrom: number;
 }
 
 export interface Testimonial {

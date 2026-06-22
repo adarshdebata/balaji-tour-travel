@@ -1,0 +1,23 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Balaji Bajrangbali emblem">
+  <defs>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff9d3a"/>
+      <stop offset="55%" stop-color="#ff7e15"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#f6c453"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#d)"/>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#fff7ed" stroke-opacity="0.55" stroke-width="1.4"/>
+  <g fill="#f59e0b" stroke="#9e3811" stroke-width="0.7" stroke-linejoin="round">
+    <path d="M24 20 L27 12 L30.5 17.5 L34 9 L37.5 17.5 L41 12 L44 20 Z"/>
+    <rect x="24" y="19" width="20" height="3" rx="1.2"/>
+  </g>
+  <circle cx="34" cy="8" r="1.8" fill="#fde68a" stroke="#9e3811" stroke-width="0.5"/>
+  <path d="M38 47 C 30 47, 25 44.5, 23.5 39 C 22.8 37.5, 20 37, 17 35 C 14 33.4, 14 30.6, 17.2 29.6 L 22 28.8 C 22.6 26.6, 23 24.6, 26 23.4 C 27 20, 30 18.4, 34 18.4 C 40 18.4, 44 23, 44 30.5 C 44 39, 42.4 45, 38 47 Z" fill="url(#f)" stroke="#9e3811" stroke-width="0.9" stroke-linejoin="round"/>
+  <path d="M28.4 23.8 q1.4 4 0 8 q-1.4 -4 0 -8 Z" fill="#b91c1c"/>
+  <circle cx="29.6" cy="29.4" r="1.1" fill="#3a3e46"/>
+</svg>

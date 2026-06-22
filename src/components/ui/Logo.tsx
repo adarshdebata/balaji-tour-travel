@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { BajrangbaliMark } from "@/components/ui/BajrangbaliMark";
 
 interface LogoProps {
   className?: string;
@@ -11,22 +12,14 @@ export function Logo({ className, variant = "default" }: LogoProps) {
 
   return (
     <Link href="/" className={cn("group inline-flex items-center gap-3", className)}>
-      <div className="relative">
-        <div
+      <div className="relative shrink-0">
+        <BajrangbaliMark
+          idSuffix={isWhite ? "logo-white" : "logo"}
           className={cn(
-            "flex h-11 w-11 items-center justify-center rounded-full",
-            "bg-gradient-to-br from-saffron-500 to-crimson-600 text-white shadow-lg",
-            "ring-1 ring-saffron-300/40 transition-transform duration-500 group-hover:rotate-12",
+            "h-11 w-11 rounded-full shadow-lg ring-1 ring-saffron-300/40",
+            "transition-transform duration-500 group-hover:rotate-[8deg]",
           )}
-        >
-          <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6">
-            <path
-              d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5L12 2Z"
-              fill="currentColor"
-              fillOpacity="0.95"
-            />
-          </svg>
-        </div>
+        />
       </div>
       <div className="flex flex-col leading-none">
         <span

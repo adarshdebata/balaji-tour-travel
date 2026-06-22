@@ -44,6 +44,7 @@ export const NAV_ITEMS: NavItem[] = [
     ],
   },
   { label: "Destinations", href: "/destinations" },
+  { label: "Estimator", href: "/estimator" },
   { label: "Gallery", href: "/gallery" },
   { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },

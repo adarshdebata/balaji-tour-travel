@@ -1,90 +1,58 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Clock, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { ParallaxBanner } from "@/components/ui/Parallax";
+import { DestinationsExplorer } from "@/components/destinations/DestinationsExplorer";
 import { DESTINATIONS } from "@/data/destinations";
 
 export const metadata = {
   title: "Destinations",
-  description: "Curated travel destinations across North India — Rajasthan, Himachal, Kashmir, Char Dham, Uttarakhand, and more.",
+  description:
+    "Curated travel destinations across North India — Rajasthan, Himachal, Kashmir, Char Dham, Uttarakhand, and more. Tap any destination to explore the full journey.",
 };
 
 export default function DestinationsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Destinations"
+        eyebrow={`${DESTINATIONS.length} Signature Journeys`}
         title="Six journeys, one trusted partner."
-        description="From royal Rajasthan to the high Himalayas — destinations we know inside out, every season."
+        description="From royal Rajasthan to the high Himalayas — tap a destination to open the full story, highlights, and pricing, then glide between them."
       />
 
+      <section className="pb-20 sm:pb-24">
+        <div className="container-padded">
+          <DestinationsExplorer destinations={DESTINATIONS} />
+        </div>
+      </section>
+
+      {/* Premium parallax CTA band */}
       <section className="pb-24">
         <div className="container-padded">
-          <div className="space-y-8 lg:space-y-16">
-            {DESTINATIONS.map((dest, idx) => (
-              <article
-                key={dest.id}
-                className={`grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12 ${
-                  idx % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-                }`}
+          <ParallaxBanner
+            src="https://images.unsplash.com/photo-1565459667879-4c7234fc4beb?q=80&w=2400&auto=format&fit=crop"
+            alt="Himalayan valley road"
+            className="overflow-hidden rounded-[2.5rem]"
+            minHeight="min-h-[44vh] sm:min-h-[52vh]"
+          >
+            <div className="mx-auto max-w-2xl text-center text-cream">
+              <p className="eyebrow !text-saffron-300 justify-center">Not sure where to begin?</p>
+              <h2 className="display-text mt-5 text-balance text-3xl text-white sm:text-5xl">
+                Tell us your dates. We&apos;ll craft the route.
+              </h2>
+              <p className="mx-auto mt-5 max-w-lg text-base text-cream/85">
+                Every journey is tailored — vehicle, stops, and pace built around
+                your group. One call is all it takes.
+              </p>
+              <Link
+                href="/contact"
+                className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-medium text-ink-900 shadow-2xl transition-transform hover:-translate-y-0.5"
               >
-                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl lg:col-span-7">
-                  <Image
-                    src={dest.image}
-                    alt={dest.name}
-                    fill
-                    sizes="(min-width: 1024px) 58vw, 100vw"
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                </div>
-
-                <div className="lg:col-span-5 lg:flex lg:flex-col lg:justify-center">
-                  <div className="eyebrow">{dest.region}</div>
-                  <h2 className="display-text mt-4 text-4xl sm:text-5xl">
-                    {dest.name}
-                  </h2>
-                  <p className="mt-5 text-base leading-relaxed text-ink-700">
-                    {dest.shortDescription}
-                  </p>
-
-                  <dl className="mt-6 grid grid-cols-2 gap-4 border-y border-ink-100 py-5 text-sm">
-                    <div>
-                      <dt className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-ink-500">
-                        <Calendar className="h-3.5 w-3.5" /> Best time
-                      </dt>
-                      <dd className="mt-1 font-medium text-ink-900">{dest.bestTime}</dd>
-                    </div>
-                    <div>
-                      <dt className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-ink-500">
-                        <Clock className="h-3.5 w-3.5" /> Duration
-                      </dt>
-                      <dd className="mt-1 font-medium text-ink-900">{dest.duration}</dd>
-                    </div>
-                  </dl>
-
-                  <div className="mt-5">
-                    <p className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-ink-500">
-                      <MapPin className="h-3.5 w-3.5" /> Locations covered
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {dest.locations.map((loc) => (
-                        <span
-                          key={loc}
-                          className="rounded-full bg-saffron-50 px-2.5 py-1 text-xs font-medium text-saffron-800"
-                        >
-                          {loc}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <Link href="/contact" className="btn-primary mt-8 self-start">
-                    Plan this trip
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+                Plan my trip
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </ParallaxBanner>
         </div>
       </section>
     </>
