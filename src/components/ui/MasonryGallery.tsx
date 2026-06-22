@@ -46,7 +46,7 @@ function GalleryTile({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, delay: (index % 8) * 0.05 }}
       onClick={onOpen}
-      className="group relative block w-full overflow-hidden rounded-2xl bg-ink-100 transition-shadow hover:shadow-2xl"
+      className="group relative block w-full overflow-hidden rounded-2xl bg-ink-100 transition-shadow hover:shadow-2xl dark:bg-ink-800"
       aria-label={`View ${img.alt}`}
     >
       {/* Skeleton placeholder — visible until the image is fully loaded. */}
@@ -74,11 +74,11 @@ export function MasonryGallery({ images, className }: MasonryGalleryProps) {
 
   if (images.length === 0) {
     return (
-      <div className="rounded-3xl border-2 border-dashed border-ink-200 p-16 text-center">
-        <p className="font-display text-2xl text-ink-700">No images yet.</p>
-        <p className="mt-2 text-sm text-ink-500">
+      <div className="rounded-3xl border-2 border-dashed border-ink-200 p-16 text-center dark:border-white/15">
+        <p className="font-display text-2xl text-ink-700 dark:text-ink-200">No images yet.</p>
+        <p className="mt-2 text-sm text-ink-500 dark:text-ink-400">
           Drop images into{" "}
-          <code className="rounded bg-ink-100 px-2 py-1 text-xs">/public/gallery</code>{" "}
+          <code className="rounded bg-ink-100 px-2 py-1 text-xs dark:bg-white/10">/public/gallery</code>{" "}
           and they&apos;ll appear here automatically.
         </p>
       </div>

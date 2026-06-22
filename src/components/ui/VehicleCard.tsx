@@ -19,9 +19,9 @@ export function VehicleCard({ vehicle, index = 0 }: VehicleCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-      className="group relative overflow-hidden rounded-3xl bg-white ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+      className="group relative overflow-hidden rounded-3xl bg-white ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 dark:bg-ink-900 dark:ring-white/10"
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-ink-100">
+      <div className="relative aspect-[16/10] overflow-hidden bg-ink-100 dark:bg-ink-800">
         <Image
           src={vehicle.image}
           alt={vehicle.name}
@@ -36,21 +36,21 @@ export function VehicleCard({ vehicle, index = 0 }: VehicleCardProps) {
 
       <div className="p-7">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-display text-2xl text-ink-900">{vehicle.name}</h3>
+          <h3 className="font-display text-2xl text-ink-900 dark:text-cream">{vehicle.name}</h3>
           <div className="text-right shrink-0">
-            <p className="text-[10px] uppercase tracking-[0.18em] text-ink-400">From</p>
-            <p className="font-display text-xl text-saffron-700">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-ink-400 dark:text-ink-500">From</p>
+            <p className="font-display text-xl text-saffron-700 dark:text-saffron-300">
               {formatPrice(vehicle.pricePerDay)}
-              <span className="text-xs text-ink-500">/day</span>
+              <span className="text-xs text-ink-500 dark:text-ink-400">/day</span>
             </p>
           </div>
         </div>
 
-        <p className="mt-3 text-sm leading-relaxed text-ink-600">
+        <p className="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
           {vehicle.description}
         </p>
 
-        <div className="mt-5 flex flex-wrap gap-4 border-y border-ink-100 py-4 text-xs text-ink-700">
+        <div className="mt-5 flex flex-wrap gap-4 border-y border-ink-100 py-4 text-xs text-ink-700 dark:border-white/10 dark:text-ink-200">
           <span className="inline-flex items-center gap-1.5">
             <Users className="h-3.5 w-3.5 text-saffron-700" />
             {vehicle.seating} seats
@@ -69,8 +69,8 @@ export function VehicleCard({ vehicle, index = 0 }: VehicleCardProps) {
 
         <ul className="mt-5 space-y-2">
           {vehicle.features.slice(0, 4).map((feature) => (
-            <li key={feature} className="flex items-start gap-2 text-sm text-ink-700">
-              <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-saffron-600" />
+            <li key={feature} className="flex items-start gap-2 text-sm text-ink-700 dark:text-ink-300">
+              <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-saffron-600 dark:text-saffron-400" />
               <span>{feature}</span>
             </li>
           ))}
@@ -82,7 +82,7 @@ export function VehicleCard({ vehicle, index = 0 }: VehicleCardProps) {
           </Link>
           <Link
             href="/contact"
-            className="flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium text-ink-700 ring-1 ring-ink-200 transition-colors hover:bg-ink-50"
+            className="flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium text-ink-700 ring-1 ring-ink-200 transition-colors hover:bg-ink-50 dark:text-ink-200 dark:ring-white/15 dark:hover:bg-white/5"
           >
             Enquire
           </Link>

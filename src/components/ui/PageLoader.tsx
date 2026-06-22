@@ -98,7 +98,7 @@ export function PageLoader({ children }: { children: React.ReactNode }) {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed inset-0 z-[200] flex flex-col items-center justify-center overflow-hidden bg-cream/90 px-6 backdrop-blur-2xl"
+            className="fixed inset-0 z-[200] flex flex-col items-center justify-center overflow-hidden bg-cream/90 px-6 backdrop-blur-2xl dark:bg-ink-950/90"
           >
             {/* Subtle, simple background accent */}
             <div
@@ -110,10 +110,10 @@ export function PageLoader({ children }: { children: React.ReactNode }) {
             <div className="relative mb-4 flex items-center gap-3 sm:mb-6">
               <BajrangbaliMark idSuffix="loader" className="h-12 w-12 drop-shadow-sm sm:h-14 sm:w-14" />
               <div className="flex flex-col leading-none">
-                <span className="font-display text-2xl font-medium text-ink-900 sm:text-3xl">
+                <span className="font-display text-2xl font-medium text-ink-900 dark:text-cream sm:text-3xl">
                   {SITE_CONFIG.shortName}
                 </span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-saffron-700 sm:text-xs">
+                <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-saffron-700 dark:text-saffron-300 sm:text-xs">
                   Tour &amp; Travel Line
                 </span>
               </div>
@@ -126,15 +126,15 @@ export function PageLoader({ children }: { children: React.ReactNode }) {
 
             {/* Progress */}
             <div className="relative mt-6 w-full max-w-xs">
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-ink-200/70">
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-ink-200/70 dark:bg-white/10">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-saffron-500 to-crimson-600 transition-[width] duration-200 ease-out"
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              <div className="mt-3 flex items-center justify-between text-xs text-ink-500">
+              <div className="mt-3 flex items-center justify-between text-xs text-ink-500 dark:text-ink-400">
                 <span className="uppercase tracking-[0.2em]">Preparing your journey</span>
-                <span className="tabular-nums font-medium text-ink-700">{Math.round(progress)}%</span>
+                <span className="tabular-nums font-medium text-ink-700 dark:text-ink-200">{Math.round(progress)}%</span>
               </div>
             </div>
 

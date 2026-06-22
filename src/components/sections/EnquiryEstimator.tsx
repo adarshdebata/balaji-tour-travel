@@ -43,7 +43,7 @@ export function EnquiryEstimator({ showHeading = true }: { showHeading?: boolean
   }, [route, vehicle]);
 
   return (
-    <section id="enquiry" className="relative py-24 lg:py-32 bg-white/50">
+    <section id="enquiry" className="relative py-24 lg:py-32 bg-white/50 dark:bg-white/[0.03]">
       <div className="container-padded">
         {showHeading && (
           <div className="mx-auto max-w-2xl text-center">
@@ -67,12 +67,12 @@ export function EnquiryEstimator({ showHeading = true }: { showHeading?: boolean
             transition={{ duration: 0.6 }}
             className="lg:col-span-5"
           >
-            <div className="rounded-3xl bg-white p-8 ring-1 ring-ink-200/60 shadow-sm">
+            <div className="rounded-3xl bg-white p-8 ring-1 ring-ink-200/60 shadow-sm dark:bg-ink-900 dark:ring-white/10">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-saffron-100 text-saffron-700">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-saffron-100 text-saffron-700 dark:bg-saffron-500/15 dark:text-saffron-300">
                   <Calculator className="h-5 w-5" />
                 </span>
-                <h3 className="font-display text-xl text-ink-900">Trip details</h3>
+                <h3 className="font-display text-xl text-ink-900 dark:text-cream">Trip details</h3>
               </div>
 
               <div className="mt-8 space-y-5">
@@ -83,7 +83,7 @@ export function EnquiryEstimator({ showHeading = true }: { showHeading?: boolean
                       setSource(e.target.value);
                       setDestination("");
                     }}
-                    className="w-full appearance-none bg-transparent text-base font-medium text-ink-900 focus:outline-none"
+                    className="w-full appearance-none bg-transparent text-base font-medium text-ink-900 focus:outline-none dark:text-cream"
                   >
                     {SOURCES.map((s) => (
                       <option key={s} value={s}>
@@ -97,7 +97,7 @@ export function EnquiryEstimator({ showHeading = true }: { showHeading?: boolean
                   <select
                     value={destination}
                     onChange={(e) => setDestination(e.target.value)}
-                    className="w-full appearance-none bg-transparent text-base font-medium text-ink-900 focus:outline-none"
+                    className="w-full appearance-none bg-transparent text-base font-medium text-ink-900 focus:outline-none dark:text-cream"
                   >
                     <option value="">Select destination</option>
                     {destinations.map((d) => (
@@ -112,7 +112,7 @@ export function EnquiryEstimator({ showHeading = true }: { showHeading?: boolean
                   <select
                     value={vehicle}
                     onChange={(e) => setVehicle(e.target.value)}
-                    className="w-full appearance-none bg-transparent text-base font-medium text-ink-900 focus:outline-none"
+                    className="w-full appearance-none bg-transparent text-base font-medium text-ink-900 focus:outline-none dark:text-cream"
                   >
                     {VEHICLE_OPTIONS.map((v) => (
                       <option key={v} value={v}>
@@ -123,7 +123,7 @@ export function EnquiryEstimator({ showHeading = true }: { showHeading?: boolean
                 </Field>
               </div>
 
-              <p className="mt-6 text-[11px] uppercase tracking-[0.15em] text-ink-400">
+              <p className="mt-6 text-[11px] uppercase tracking-[0.15em] text-ink-400 dark:text-ink-500">
                 *Indicative pricing. Final quote confirmed by our team.
               </p>
             </div>
@@ -138,12 +138,12 @@ export function EnquiryEstimator({ showHeading = true }: { showHeading?: boolean
             className="lg:col-span-7"
           >
             {!route ? (
-              <div className="flex h-full min-h-[400px] flex-col items-center justify-center rounded-3xl border-2 border-dashed border-ink-200 p-12 text-center">
-                <Navigation className="h-10 w-10 text-ink-300" />
-                <p className="mt-4 font-display text-2xl text-ink-700">
+              <div className="flex h-full min-h-[400px] flex-col items-center justify-center rounded-3xl border-2 border-dashed border-ink-200 p-12 text-center dark:border-white/15">
+                <Navigation className="h-10 w-10 text-ink-300 dark:text-ink-500" />
+                <p className="mt-4 font-display text-2xl text-ink-700 dark:text-ink-200">
                   Select a destination to see your estimate
                 </p>
-                <p className="mt-2 text-sm text-ink-500">
+                <p className="mt-2 text-sm text-ink-500 dark:text-ink-400">
                   Distance, travel time, and approximate cost will appear here.
                 </p>
               </div>
@@ -229,11 +229,11 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink-500">
+      <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-ink-500 dark:text-ink-400">
         {label}
       </span>
-      <div className="mt-2 flex items-center gap-3 rounded-2xl bg-cream px-4 py-3.5 ring-1 ring-ink-200 transition-all focus-within:ring-2 focus-within:ring-saffron-400">
-        <span className="text-saffron-700">{icon}</span>
+      <div className="mt-2 flex items-center gap-3 rounded-2xl bg-cream px-4 py-3.5 ring-1 ring-ink-200 transition-all focus-within:ring-2 focus-within:ring-saffron-400 dark:bg-white/5 dark:ring-white/10">
+        <span className="text-saffron-700 dark:text-saffron-300">{icon}</span>
         {children}
       </div>
     </label>

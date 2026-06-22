@@ -51,24 +51,24 @@ export default function FleetPage() {
                 <Link
                   key={slug}
                   href={href}
-                  className="group relative overflow-hidden rounded-3xl bg-white p-8 ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+                  className="group relative overflow-hidden rounded-3xl bg-white p-8 ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 dark:bg-ink-900 dark:ring-white/10"
                 >
-                  <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-saffron-100 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-saffron-100 opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:bg-saffron-500/10" />
 
                   <div className="relative">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-saffron-500 to-crimson-600 text-white shadow-lg shadow-saffron-500/30">
                       <Icon className="h-6 w-6" />
                     </div>
 
-                    <h2 className="mt-6 font-display text-3xl text-ink-900">
+                    <h2 className="mt-6 font-display text-3xl text-ink-900 dark:text-cream">
                       {name}
                     </h2>
-                    <p className="mt-3 text-sm leading-relaxed text-ink-600">
+                    <p className="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
                       {description}
                     </p>
 
-                    <div className="mt-8 flex items-center justify-between border-t border-ink-100 pt-5">
-                      <span className="text-xs uppercase tracking-[0.2em] text-saffron-700">
+                    <div className="mt-8 flex items-center justify-between border-t border-ink-100 pt-5 dark:border-white/10">
+                      <span className="text-xs uppercase tracking-[0.2em] text-saffron-700 dark:text-saffron-300">
                         {count} vehicle{count > 1 ? "s" : ""}
                       </span>
                       <ArrowRight className="h-5 w-5 text-saffron-700 transition-transform group-hover:translate-x-1" />

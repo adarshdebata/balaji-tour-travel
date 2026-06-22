@@ -82,7 +82,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="mt-8 max-w-xl text-base leading-relaxed text-ink-600 sm:text-lg"
+              className="mt-8 max-w-xl text-base leading-relaxed text-ink-600 dark:text-ink-300 sm:text-lg"
             >
               Premium Tempo Traveller, SUV, and Luxury Coach rentals across
               Delhi NCR. Family tours, corporate offsites, pilgrimages, and
@@ -99,9 +99,6 @@ export function Hero() {
               <Link href="/contact" className="btn-primary">
                 Book Now
               </Link>
-              <Link href="/contact" className="btn-secondary">
-                Contact Us
-              </Link>
               <a
                 href={`tel:${CONTACT.phonePrimary.replace(/\s/g, "")}`}
                 className="btn-ghost"
@@ -115,7 +112,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-12 flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-ink-500"
+              className="mt-12 flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-ink-500 dark:text-ink-400"
             >
               <span>Tempo Traveller</span>
               <span className="h-1 w-1 rounded-full bg-ink-400" />
@@ -148,12 +145,12 @@ export function Hero() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -left-6 bottom-12 w-56 rounded-2xl bg-white p-5 shadow-2xl ring-1 ring-ink-200/60"
+                className="absolute -left-6 bottom-12 w-56 rounded-2xl bg-white p-5 shadow-2xl ring-1 ring-ink-200/60 dark:bg-ink-900 dark:ring-white/10"
               >
-                <p className="text-xs uppercase tracking-[0.18em] text-saffron-700">
+                <p className="text-xs uppercase tracking-[0.18em] text-saffron-700 dark:text-saffron-300">
                   Happy travellers
                 </p>
-                <p className="mt-2 font-display text-3xl text-ink-900">
+                <p className="mt-2 font-display text-3xl text-ink-900 dark:text-cream">
                   12,000+
                 </p>
                 <div className="mt-3 flex -space-x-2">

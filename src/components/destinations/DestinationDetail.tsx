@@ -24,7 +24,7 @@ export function DestinationDetail({ destination }: { destination: Destination })
           travel={70}
           blur
           priority
-          overlayClassName="bg-gradient-to-b from-cream/55 via-cream/80 to-cream"
+          overlayClassName="bg-gradient-to-b from-cream/55 via-cream/80 to-cream dark:from-ink-950/55 dark:via-ink-950/80 dark:to-ink-950"
         />
 
         <div className="container-padded">
@@ -35,7 +35,7 @@ export function DestinationDetail({ destination }: { destination: Destination })
           >
             <Link
               href="/destinations"
-              className="group inline-flex items-center gap-2 text-sm font-medium text-ink-700 hover:text-saffron-700"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-ink-700 hover:text-saffron-700 dark:text-ink-300 dark:hover:text-saffron-300"
             >
               <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
               All destinations

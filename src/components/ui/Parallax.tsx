@@ -72,12 +72,15 @@ export function ParallaxBanner({
   alt = "",
   className,
   children,
+  travel = 80,
   minHeight = "min-h-[60vh] sm:min-h-[70vh]",
 }: {
   src: string;
   alt?: string;
   className?: string;
   children: React.ReactNode;
+  /** How far (px) the image drifts against the scroll — higher = stronger parallax. */
+  travel?: number;
   minHeight?: string;
 }) {
   return (
@@ -85,8 +88,9 @@ export function ParallaxBanner({
       <ParallaxBg
         src={src}
         alt={alt}
+        travel={travel}
         sizes="100vw"
-        overlayClassName="bg-gradient-to-t from-ink-950/80 via-ink-950/45 to-ink-950/30"
+        overlayClassName="bg-gradient-to-t from-ink-950/85 via-ink-950/55 to-ink-950/35"
       />
       <div className="container-padded relative w-full py-20">{children}</div>
     </section>

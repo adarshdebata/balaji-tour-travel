@@ -25,7 +25,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
         <span
           className={cn(
             "font-display text-xl font-medium tracking-tight",
-            isWhite ? "text-white" : "text-ink-900",
+            isWhite ? "text-white" : "text-ink-900 dark:text-cream",
           )}
         >
           Balaji
@@ -33,7 +33,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
         <span
           className={cn(
             "text-[10px] font-medium uppercase tracking-[0.22em]",
-            isWhite ? "text-saffron-200" : "text-saffron-700",
+            isWhite ? "text-saffron-200" : "text-saffron-700 dark:text-saffron-400",
           )}
         >
           Tour &amp; Travel Line

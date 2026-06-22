@@ -18,7 +18,7 @@ export function Introduction() {
           >
             <div className="eyebrow">About Balaji Travels</div>
             <h2 className="display-text mt-6 text-4xl sm:text-5xl lg:text-6xl">
-              A quarter century of moving people, carefully.
+              Moving people carefully — that&apos;s the whole job.
             </h2>
           </motion.div>
 
@@ -29,23 +29,23 @@ export function Introduction() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="lg:col-span-7 lg:pl-8"
           >
-            <p className="text-lg leading-relaxed text-ink-700">
+            <p className="text-lg leading-relaxed text-ink-700 dark:text-ink-300">
               Since 2000, Balaji Tour &amp; Travel Line has been Delhi NCR&apos;s
               trusted partner for group travel. What began as a small Tempo
               Traveller service has grown into a fleet of 80+ vehicles — every
               one of them maintained, inspected, and ready for the road.
             </p>
-            <p className="mt-6 text-lg leading-relaxed text-ink-700">
+            <p className="mt-6 text-lg leading-relaxed text-ink-700 dark:text-ink-300">
               We move families on Char Dham yatras, corporate teams to
               Himalayan offsites, weddings across Rajasthan, and college groups
               through Spiti. The job is the same every time: get people there
-              safely, comfortably, and on schedule. Twenty-five years in, we
-              still treat each booking like our first.
+              safely, comfortably, and on schedule — and we still treat each
+              booking like our first.
             </p>
 
             <Link
               href="/about"
-              className="group mt-8 inline-flex items-center gap-2 font-medium text-saffron-700"
+              className="group mt-8 inline-flex items-center gap-2 font-medium text-saffron-700 dark:text-saffron-300"
             >
               Read our full story
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

@@ -14,7 +14,7 @@ export function AirportTransfer() {
   return (
     <section className="relative py-24 lg:py-32">
       <div className="container-padded">
-        <div className="relative grid grid-cols-1 items-center gap-12 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-saffron-50 via-cream to-crimson-50 p-8 ring-1 ring-saffron-200/40 sm:p-12 lg:grid-cols-12 lg:gap-16 lg:p-16">
+        <div className="relative grid grid-cols-1 items-center gap-12 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-saffron-50 via-cream to-crimson-50 p-8 ring-1 ring-saffron-200/40 dark:from-ink-900 dark:via-ink-950 dark:to-ink-900 dark:ring-white/10 sm:p-12 lg:grid-cols-12 lg:gap-16 lg:p-16">
           {/* Decorative plane path */}
           <svg
             aria-hidden="true"
@@ -40,9 +40,9 @@ export function AirportTransfer() {
             transition={{ duration: 0.7 }}
             className="relative lg:col-span-7"
           >
-            <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 ring-1 ring-saffron-200">
-              <Plane className="h-3.5 w-3.5 text-saffron-700" />
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-saffron-700">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 ring-1 ring-saffron-200 dark:bg-white/10 dark:ring-white/15">
+              <Plane className="h-3.5 w-3.5 text-saffron-700 dark:text-saffron-300" />
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-saffron-700 dark:text-saffron-300">
                 Airport Transfer
               </span>
             </div>
@@ -51,7 +51,7 @@ export function AirportTransfer() {
               From the runway to your doorstep — without the chaos.
             </h2>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-700">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-700 dark:text-ink-300">
               We handle Delhi (IGI), Hindon, and onward connections with the
               kind of precision business travellers expect and families
               appreciate. Flight tracking, waiting time included, and a driver
@@ -60,9 +60,9 @@ export function AirportTransfer() {
 
             <ul className="mt-8 space-y-3">
               {FEATURES.map(({ icon: Icon, label }) => (
-                <li key={label} className="flex items-center gap-3 text-ink-800">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white ring-1 ring-saffron-200">
-                    <Icon className="h-4 w-4 text-saffron-700" />
+                <li key={label} className="flex items-center gap-3 text-ink-800 dark:text-ink-200">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white ring-1 ring-saffron-200 dark:bg-white/10 dark:ring-white/15">
+                    <Icon className="h-4 w-4 text-saffron-700 dark:text-saffron-300" />
                   </span>
                   <span className="text-base">{label}</span>
                 </li>
@@ -86,8 +86,8 @@ export function AirportTransfer() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative lg:col-span-5"
           >
-            <div className="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-ink-200/40">
-              <p className="text-xs uppercase tracking-[0.2em] text-saffron-700">
+            <div className="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-ink-200/40 dark:bg-ink-900 dark:ring-white/10">
+              <p className="text-xs uppercase tracking-[0.2em] text-saffron-700 dark:text-saffron-300">
                 Sample fares
               </p>
               <div className="mt-6 space-y-4">
@@ -99,19 +99,19 @@ export function AirportTransfer() {
                 ].map((row) => (
                   <div
                     key={`${row.from}-${row.to}`}
-                    className="flex items-center justify-between border-b border-ink-100 pb-3 last:border-0"
+                    className="flex items-center justify-between border-b border-ink-100 pb-3 last:border-0 dark:border-white/10"
                   >
                     <div className="text-sm">
-                      <p className="font-medium text-ink-900">{row.from}</p>
-                      <p className="text-xs text-ink-500">→ {row.to}</p>
+                      <p className="font-medium text-ink-900 dark:text-cream">{row.from}</p>
+                      <p className="text-xs text-ink-500 dark:text-ink-400">→ {row.to}</p>
                     </div>
-                    <span className="font-display text-xl text-saffron-700">
+                    <span className="font-display text-xl text-saffron-700 dark:text-saffron-300">
                       {row.price}
                     </span>
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-[11px] uppercase tracking-[0.15em] text-ink-400">
+              <p className="mt-6 text-[11px] uppercase tracking-[0.15em] text-ink-400 dark:text-ink-500">
                 *Sedan rates. Tolls &amp; parking extra.
               </p>
             </div>

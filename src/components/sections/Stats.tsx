@@ -63,7 +63,7 @@ export function Stats() {
             <div className="max-w-2xl">
               <div className="eyebrow !text-saffron-300">By the numbers</div>
               <h2 className="display-text mt-5 text-4xl text-cream sm:text-5xl lg:text-6xl">
-                Two and a half decades, plenty of miles.
+                Earned mile by mile, trip by trip.
               </h2>
             </div>
 

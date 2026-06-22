@@ -74,7 +74,7 @@ export function DestinationsExplorer({ destinations }: { destinations: Destinati
                 e.preventDefault();
                 setPage({ index: idx, dir: 0 });
               }}
-              className="group block h-full overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-saffron-400"
+              className="group block h-full overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-saffron-400 dark:bg-ink-900 dark:ring-white/10"
               aria-label={`Open ${dest.name} details`}
             >
               <div className="relative aspect-[4/5] overflow-hidden">
@@ -170,7 +170,7 @@ export function DestinationsExplorer({ destinations }: { destinations: Destinati
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  className="pointer-events-auto flex h-full max-h-[90vh] w-full flex-col overflow-y-auto rounded-t-[1.75rem] bg-cream shadow-2xl md:max-h-none md:flex-row md:overflow-hidden md:rounded-[1.75rem]"
+                  className="pointer-events-auto flex h-full max-h-[90vh] w-full flex-col overflow-y-auto rounded-t-[1.75rem] bg-cream shadow-2xl dark:bg-ink-900 md:max-h-none md:flex-row md:overflow-hidden md:rounded-[1.75rem]"
                 >
                   {/* Image side (top on mobile, right on desktop) */}
                   <div className="relative order-1 aspect-[16/10] w-full shrink-0 md:order-2 md:aspect-auto md:h-full md:w-[56%]">
@@ -224,53 +224,53 @@ export function DestinationsExplorer({ destinations }: { destinations: Destinati
 
                     <div className="mt-5 space-y-4">
                       {active.longDescription.map((para, i) => (
-                        <p key={i} className="text-base leading-relaxed text-ink-700">
+                        <p key={i} className="text-base leading-relaxed text-ink-700 dark:text-ink-300">
                           {para}
                         </p>
                       ))}
                     </div>
 
                     {/* Meta */}
-                    <dl className="mt-7 grid grid-cols-3 gap-3 rounded-2xl bg-saffron-50 p-4 text-center ring-1 ring-saffron-100">
+                    <dl className="mt-7 grid grid-cols-3 gap-3 rounded-2xl bg-saffron-50 p-4 text-center ring-1 ring-saffron-100 dark:bg-white/5 dark:ring-white/10">
                       <div>
-                        <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-500">Best time</dt>
-                        <dd className="mt-1 text-sm font-semibold text-ink-900">{active.bestTime}</dd>
+                        <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-500 dark:text-ink-400">Best time</dt>
+                        <dd className="mt-1 text-sm font-semibold text-ink-900 dark:text-cream">{active.bestTime}</dd>
                       </div>
-                      <div className="border-x border-saffron-100">
-                        <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-500">Duration</dt>
-                        <dd className="mt-1 text-sm font-semibold text-ink-900">{active.duration}</dd>
+                      <div className="border-x border-saffron-100 dark:border-white/10">
+                        <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-500 dark:text-ink-400">Duration</dt>
+                        <dd className="mt-1 text-sm font-semibold text-ink-900 dark:text-cream">{active.duration}</dd>
                       </div>
                       <div>
-                        <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-500">From</dt>
-                        <dd className="mt-1 text-sm font-semibold text-ink-900">{formatPrice(active.priceFrom)}</dd>
+                        <dt className="text-[10px] uppercase tracking-[0.16em] text-ink-500 dark:text-ink-400">From</dt>
+                        <dd className="mt-1 text-sm font-semibold text-ink-900 dark:text-cream">{formatPrice(active.priceFrom)}</dd>
                       </div>
                     </dl>
 
                     {/* Highlights */}
-                    <h3 className="mt-7 text-xs font-medium uppercase tracking-[0.18em] text-saffron-700">
+                    <h3 className="mt-7 text-xs font-medium uppercase tracking-[0.18em] text-saffron-700 dark:text-saffron-300">
                       Trip highlights
                     </h3>
                     <ul className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
                       {active.highlights.map((h) => (
                         <li key={h} className="flex items-start gap-2.5">
-                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-saffron-100 text-saffron-700">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-saffron-100 text-saffron-700 dark:bg-saffron-500/15 dark:text-saffron-300">
                             <Check className="h-3 w-3" />
                           </span>
-                          <span className="text-sm leading-snug text-ink-700">{h}</span>
+                          <span className="text-sm leading-snug text-ink-700 dark:text-ink-300">{h}</span>
                         </li>
                       ))}
                     </ul>
 
                     {/* Locations */}
                     <div className="mt-7">
-                      <p className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-ink-500">
+                      <p className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">
                         <MapPin className="h-3.5 w-3.5" /> Locations covered
                       </p>
                       <div className="mt-2.5 flex flex-wrap gap-1.5">
                         {active.locations.map((loc) => (
                           <span
                             key={loc}
-                            className="rounded-full bg-white px-2.5 py-1 text-[11px] font-medium text-saffron-800 ring-1 ring-saffron-100"
+                            className="rounded-full bg-white px-2.5 py-1 text-[11px] font-medium text-saffron-800 ring-1 ring-saffron-100 dark:bg-white/5 dark:text-saffron-300 dark:ring-white/10"
                           >
                             {loc}
                           </span>
@@ -286,7 +286,7 @@ export function DestinationsExplorer({ destinations }: { destinations: Destinati
                       </Link>
                       <Link
                         href={`/destinations/${active.id}`}
-                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full px-6 py-3 text-sm font-medium text-saffron-700 ring-1 ring-saffron-200 transition-colors hover:bg-saffron-50"
+                        className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full px-6 py-3 text-sm font-medium text-saffron-700 ring-1 ring-saffron-200 transition-colors hover:bg-saffron-50 dark:text-saffron-300 dark:ring-white/15 dark:hover:bg-white/5"
                       >
                         View full page
                         <ArrowUpRight className="h-4 w-4" />

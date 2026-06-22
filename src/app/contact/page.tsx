@@ -53,15 +53,15 @@ export default function ContactPage() {
                 href={href}
                 target={label === "WhatsApp" ? "_blank" : undefined}
                 rel={label === "WhatsApp" ? "noopener noreferrer" : undefined}
-                className="group relative overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 dark:bg-ink-900 dark:ring-white/10"
               >
                 <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${accent} text-white shadow-lg`}>
                   <Icon className="h-6 w-6" />
                 </div>
-                <p className="mt-6 text-xs uppercase tracking-[0.2em] text-ink-500">
+                <p className="mt-6 text-xs uppercase tracking-[0.2em] text-ink-500 dark:text-ink-400">
                   {label}
                 </p>
-                <p className="mt-2 font-display text-2xl text-ink-900 break-all">{value}</p>
+                <p className="mt-2 font-display text-2xl text-ink-900 break-all dark:text-cream">{value}</p>
                 <div className="mt-6 flex items-center gap-1.5 text-sm font-medium text-saffron-700">
                   {cta}
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -76,17 +76,17 @@ export default function ContactPage() {
         <div className="container-padded">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-white p-8 ring-1 ring-ink-200/60 shadow-sm">
-                <h2 className="font-display text-3xl text-ink-900">Visit us</h2>
+              <div className="rounded-3xl bg-white p-8 ring-1 ring-ink-200/60 shadow-sm dark:bg-ink-900 dark:ring-white/10">
+                <h2 className="font-display text-3xl text-ink-900 dark:text-cream">Visit us</h2>
 
                 <div className="mt-8 space-y-6 text-base">
                   <div className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-saffron-100 text-saffron-700">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-saffron-100 text-saffron-700 dark:bg-saffron-500/15 dark:text-saffron-300">
                       <MapPin className="h-5 w-5" />
                     </span>
                     <div>
-                      <p className="text-xs uppercase tracking-[0.18em] text-ink-500">Office</p>
-                      <p className="mt-1 text-ink-900">
+                      <p className="text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Office</p>
+                      <p className="mt-1 text-ink-900 dark:text-cream">
                         {CONTACT.address.line1}
                         <br />
                         {CONTACT.address.line2}
@@ -97,23 +97,23 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-saffron-100 text-saffron-700">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-saffron-100 text-saffron-700 dark:bg-saffron-500/15 dark:text-saffron-300">
                       <Clock className="h-5 w-5" />
                     </span>
                     <div>
-                      <p className="text-xs uppercase tracking-[0.18em] text-ink-500">Hours</p>
-                      <p className="mt-1 text-ink-900">{CONTACT.hours}</p>
-                      <p className="text-sm text-ink-500">For urgent bookings &amp; on-trip support</p>
+                      <p className="text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Hours</p>
+                      <p className="mt-1 text-ink-900 dark:text-cream">{CONTACT.hours}</p>
+                      <p className="text-sm text-ink-500 dark:text-ink-400">For urgent bookings &amp; on-trip support</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-saffron-100 text-saffron-700">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-saffron-100 text-saffron-700 dark:bg-saffron-500/15 dark:text-saffron-300">
                       <Phone className="h-5 w-5" />
                     </span>
                     <div>
-                      <p className="text-xs uppercase tracking-[0.18em] text-ink-500">Phones</p>
-                      <a href={`tel:${CONTACT.phonePrimary.replace(/\s/g, "")}`} className="mt-1 block text-ink-900 hover:text-saffron-700">
+                      <p className="text-xs uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Phones</p>
+                      <a href={`tel:${CONTACT.phonePrimary.replace(/\s/g, "")}`} className="mt-1 block text-ink-900 hover:text-saffron-700 dark:text-cream dark:hover:text-saffron-300">
                         {CONTACT.phonePrimary}
                       </a>
                       <a href={`tel:${CONTACT.phoneSecondary.replace(/\s/g, "")}`} className="text-ink-900 hover:text-saffron-700">
@@ -126,7 +126,7 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-7">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-ink-100 ring-1 ring-ink-200/60">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-ink-100 ring-1 ring-ink-200/60 dark:bg-ink-800 dark:ring-white/10">
                 {/* Embedded map placeholder */}
                 <iframe
                   src="https://www.openstreetmap.org/export/embed.html?bbox=77.30%2C28.55%2C77.40%2C28.62&amp;layer=mapnik"

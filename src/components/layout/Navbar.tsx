@@ -35,6 +35,7 @@ export function Navbar() {
   }, [mobileOpen]);
 
   return (
+    <>
     <header
       className={cn(
         "sticky top-0 z-50 transition-all duration-500",
@@ -134,13 +135,13 @@ export function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
-            <a
+            {/* <a
               href={`tel:${CONTACT.phonePrimary.replace(/\s/g, "")}`}
               className="btn-primary !py-2.5 !px-5 text-sm"
             >
               <Phone className="h-4 w-4" />
               Call Now
-            </a>
+            </a> */}
           </div>
 
           {/* Mobile: theme toggle + burger */}
@@ -156,8 +157,12 @@ export function Navbar() {
           </div>
         </nav>
       </div>
+    </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — rendered as a sibling of <header>, not a child, so the
+          scrolled header's backdrop-blur (which becomes a containing block for
+          fixed elements) can't trap this full-screen overlay and make the panel
+          go transparent / collapse to the header height. */}
       <AnimatePresence>
         {mobileOpen && (
           <>
@@ -166,7 +171,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden fixed inset-0 z-50 bg-ink-950/40 backdrop-blur-sm"
+              className="lg:hidden fixed inset-0 z-[60] bg-ink-950/50 backdrop-blur-sm"
               onClick={() => setMobileOpen(false)}
             />
             <motion.aside
@@ -174,7 +179,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 28, stiffness: 240 }}
-              className="lg:hidden fixed inset-y-0 right-0 z-50 w-[88%] max-w-sm bg-cream shadow-2xl dark:bg-ink-950"
+              className="lg:hidden fixed inset-y-0 right-0 z-[60] w-[88%] max-w-sm bg-cream shadow-2xl dark:bg-ink-950"
             >
               <div className="flex h-20 items-center justify-between px-6">
                 <Logo />
@@ -208,20 +213,20 @@ export function Navbar() {
                   >
                     {CONTACT.phonePrimary}
                   </a>
-                  <a
+                  {/* <a
                     href={`tel:${CONTACT.phonePrimary.replace(/\s/g, "")}`}
                     className="btn-primary mt-5 w-full"
                   >
                     <Phone className="h-4 w-4" />
                     Call Now
-                  </a>
+                  </a> */}
                 </div>
               </nav>
             </motion.aside>
           </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
 
