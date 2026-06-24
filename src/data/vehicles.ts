@@ -88,6 +88,21 @@ export const VEHICLES: Vehicle[] = [
     description:
       "The flagship of premium group travel. Lounge-style seating, monocoque chassis, and a ride quality that feels closer to a luxury sedan.",
   },
+   {
+    id: "urbania",
+    name: "Force Urbania Traveller",
+    category: "tempo-traveller",
+    image: "https://www.forcemotors.com/wp-content/uploads/2025/02/URBANIA-1.png",
+    seating: 13,
+    luggage: "Custom luggage bay",
+    ac: true,
+    features: ["Business-class seats", "Climate-controlled cabin", "Mood lighting", "USB charging per seat", "Privacy curtains", "Bose-quality audio"],
+    pricePerKm: 38,
+    pricePerDay: 12000,
+    description:
+      "The flagship of premium group travel. Lounge-style seating, monocoque chassis, and a ride quality that feels closer to a luxury sedan.",
+  },
+
 
   // Luxury Coaches
   {
