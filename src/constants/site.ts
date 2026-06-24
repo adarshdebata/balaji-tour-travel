@@ -12,22 +12,22 @@ export const SITE_CONFIG = {
 } as const;
 
 export const CONTACT = {
-  phonePrimary: "+91 98765 43210",
-  phoneSecondary: "+91 98765 43211",
-  whatsapp: "+91 98765 43210",
-  email: "info@balajitourandtravelline.com",
+  phonePrimary: "+91 92105 03600",
+  phoneSecondary: "+91 98915 06300",
+  whatsapp: "+91 92105 03600",
+  email: "balajitourandtravelline@gmail.com",
   address: {
-    line1: "Sector 22, Noida",
+    line1: "Axis Bank ATM, Swati Public School Building, D-1/41, Block D, New Kondli, Kondli",
     line2: "Gautam Buddh Nagar",
     city: "Delhi NCR",
-    state: "Uttar Pradesh",
-    pincode: "201301",
+    state: "Delhi",
+    pincode: "110096",
     country: "India",
   },
   hours: "24 / 7 Available",
   socials: {
-    facebook: "https://facebook.com/",
-    instagram: "https://instagram.com/",
+    facebook: "https://www.facebook.com/balajitourtravelsdelhi/",
+    instagram: "https://www.instagram.com/balajitourtravellinedelhi/",
     youtube: "https://youtube.com/",
   },
 } as const;
