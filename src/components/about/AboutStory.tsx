@@ -89,7 +89,7 @@ export function AboutStory() {
               So he started a one-vehicle operation out of a small Noida garage,
               with a single Tempo Traveller and one rule:{" "}
               <span className="font-medium text-ink-900 dark:text-cream">
-                do every trip the way you&apos;d want your own family treated.
+                Do every trip the way you&apos;d want your own family treated.
               </span>{" "}
               That rule still runs the company.
             </p>
