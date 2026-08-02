@@ -17,6 +17,20 @@ export const VEHICLES: Vehicle[] = [
       "Commanding road presence with premium comfort. The Fortuner is built for highways, hill passes, and everything in between.",
   },
   {
+    id: "hyryder",
+    name: "Toyota Urban Cruiser Hyryder",
+    category: "suv",
+    image: "https://images.unsplash.com/photo-1615887110697-0819ec23465f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    seating: 7,
+    luggage: "4 large bags",
+    ac: true,
+    features: ["Push-start ignition", "Leather interiors", "Touchscreen infotainment", "Cruise control", "Hill-assist", "Sunroof"],
+    pricePerKm: 22,
+    pricePerDay: 6500,
+    description:
+      "Commanding road presence with premium comfort. The Fortuner is built for highways, hill passes, and everything in between.",
+  },
+  {
     id: "innova-crysta",
     name: "Toyota Innova Crysta",
     category: "suv",
