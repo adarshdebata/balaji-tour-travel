@@ -147,6 +147,20 @@ export const VEHICLES: Vehicle[] = [
     description:
       "The gold standard for premium group travel. Volvo's signature ride comfort across every kilometer of your route.",
   },
+  {
+    id: "coach-53",
+    name: "53-Seater Volvo Coach",
+    category: "luxury-coach",
+    image: "https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/9600_15m_sleeper_FR_01a_hires-nbg?qlt=82&wid=1440&ts=1659609410809&dpr=off&fit=constrain",
+    seating: 53,
+    luggage: "Twin luggage bays",
+    ac: true,
+    features: ["Pneumatic suspension", "Cabin-class seating", "Wi-Fi enabled", "Onboard refreshments", "Trained co-pilot", "Surveillance cameras"],
+    pricePerKm: 62,
+    pricePerDay: 22000,
+    description:
+      "The gold standard for premium group travel. Volvo's signature ride comfort across every kilometer of your route.",
+  },
 ];
 
 export const getVehiclesByCategory = (category: Vehicle["category"]) =>
