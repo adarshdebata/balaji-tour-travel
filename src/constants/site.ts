@@ -39,6 +39,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/fleet",
     children: [
       { label: "SUV", href: "/fleet/suv" },
+      { label: "Luxury SUV", href: "/fleet/Luxury" },
       { label: "Tempo Traveller", href: "/fleet/tempo-traveller" },
       { label: "Luxury Coaches", href: "/fleet/luxury-coaches" },
     ],
