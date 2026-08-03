@@ -119,21 +119,7 @@ export const VEHICLES: Vehicle[] = [
 
 
   // Luxury Coaches
-  {
-    id: "coach-30",
-    name: "30-Seater Luxury Coach",
-    category: "luxury-coach",
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&q=80",
-    seating: 30,
-    luggage: "Underfloor luggage bay",
-    ac: true,
-    features: ["2x2 reclining seats", "Onboard washroom (optional)", "PA system", "LED TV", "Refrigerator", "Curtains"],
-    pricePerKm: 48,
-    pricePerDay: 16000,
-    description:
-      "Built for weddings, corporate offsites, and large pilgrimage groups. A first-class experience on wheels.",
-  },
-  {
+    {
     id: "coach-45",
     name: "45-Seater Volvo Coach",
     category: "luxury-coach",
@@ -146,6 +132,20 @@ export const VEHICLES: Vehicle[] = [
     pricePerDay: 22000,
     description:
       "The gold standard for premium group travel. Volvo's signature ride comfort across every kilometer of your route.",
+  },
+  {
+    id: "coach-49",
+    name: "49-Seater Luxury Coach",
+    category: "luxury-coach",
+    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&q=80",
+    seating: 49,
+    luggage: "Underfloor luggage bay",
+    ac: true,
+    features: ["2x2 reclining seats", "Onboard washroom (optional)", "PA system", "LED TV", "Refrigerator", "Curtains"],
+    pricePerKm: 48,
+    pricePerDay: 16000,
+    description:
+      "Built for weddings, corporate offsites, and large pilgrimage groups. A first-class experience on wheels.",
   },
   {
     id: "coach-53",
