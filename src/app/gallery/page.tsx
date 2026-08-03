@@ -29,7 +29,7 @@ const PLACEHOLDER_IMAGES = [
   { src: "https://images.unsplash.com/photo-1521182289461-22be748bc522?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGluZGlhJTIwdG91cmlzdHxlbnwwfHwwfHx8MA%3D%3D", alt: "Premium coach", id: "p14" },
   { src: "https://images.unsplash.com/photo-1627895139551-1329f16953cf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "SUV vehicle", id: "p15" },
   { src: "https://images.unsplash.com/photo-1598190896090-9dc5c70361d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGluZGlhJTIwdG91cmlzdHxlbnwwfHwwfHx8MA%3D%3D", alt: "Tempo traveller", id: "p16" },
-  { src: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Tempo traveller", id: "p16" },
+  { src: "https://trevalia.in/wp-content/uploads/2025/06/WhatsApp-Image-2025-07-08-at-21.34.32_efdc0404-scaled-e1751991038326.jpg", alt: "Tempo traveller", id: "p16" },
 
 ];
 
