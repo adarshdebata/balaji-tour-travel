@@ -71,7 +71,7 @@ export const DESTINATIONS: Destination[] = [
     id: "char-dham",
     name: "Char Dham Yatra",
     region: "Sacred Pilgrimage Circuit",
-    image: "https://images.unsplash.com/photo-1706790574525-d218c4c52b5c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://i.pinimg.com/736x/30/a2/e8/30a2e82c5bb00e89a501e50df5c358f6.jpg",
     shortDescription:
       "Yamunotri, Gangotri, Kedarnath, Badrinath — the four abodes carved into Himalayan rock. A journey of devotion done with care.",
     longDescription: [
