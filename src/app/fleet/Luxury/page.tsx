@@ -9,12 +9,12 @@ export const metadata = {
 };
 
 export default function SuvFleetPage() {
-  const vehicles = getVehiclesByCategory("suv");
+  const vehicles = getVehiclesByCategory("luxury");
 
   return (
     <>
       <PageHeader
-        eyebrow="Our Fleet · SUV"
+        eyebrow="Our Fleet · Luxury"
         title="SUVs that handle the highway and the hill."
         description="Three workhorses for executive travel, family weekends, and adventures off the beaten path."
       />
