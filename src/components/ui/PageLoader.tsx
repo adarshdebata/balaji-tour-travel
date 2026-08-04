@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, animate, motion } from "framer-motion";
-import { BusScene } from "@/components/ui/BusScene";
-import { BajrangbaliMark } from "@/components/ui/BajrangbaliMark";
+import { NeonBusScene } from "@/components/ui/NeonBusScene";
+import { BusBadge } from "@/components/ui/BusBadge";
 import { SITE_CONFIG } from "@/constants/site";
 
 const MIN_INTRO_MS = 1600; // guaranteed brand moment
@@ -98,43 +98,45 @@ export function PageLoader({ children }: { children: React.ReactNode }) {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed inset-0 z-[200] flex flex-col items-center justify-center overflow-hidden bg-cream/90 px-6 backdrop-blur-2xl dark:bg-ink-950/90"
+            className="fixed inset-0 z-[200] flex flex-col items-center justify-center overflow-hidden bg-[#0a0512] px-6"
           >
-            {/* Subtle, simple background accent */}
+            {/* One soft violet bloom is the whole background — the neon has to
+                be the brightest thing on screen. Deliberately dark in both
+                themes; neon on cream reads as a smudge. */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-saffron-200/40 blur-3xl"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-royal-700/25 blur-[110px]"
             />
 
-            {/* Brand */}
-            <div className="relative mb-4 flex items-center gap-3 sm:mb-6">
-              <BajrangbaliMark idSuffix="loader" className="h-12 w-12 drop-shadow-sm sm:h-14 sm:w-14" />
+            {/* Brand, held back so the bus stays the focus */}
+            <div className="relative mb-2 flex items-center gap-2.5 opacity-80 sm:mb-4">
+              <BusBadge idSuffix="loader" className="h-9 w-9 sm:h-10 sm:w-10" />
               <div className="flex flex-col leading-none">
-                <span className="font-display text-2xl font-medium text-ink-900 dark:text-cream sm:text-3xl">
+                <span className="font-display text-lg font-medium text-cream sm:text-xl">
                   {SITE_CONFIG.shortName}
                 </span>
-                <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-saffron-700 dark:text-saffron-300 sm:text-xs">
+                <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-gold-400 sm:text-[10px]">
                   Tour &amp; Travel Line
                 </span>
               </div>
             </div>
 
-            {/* Bus scene */}
-            <div className="relative w-full max-w-sm sm:max-w-md">
-              <BusScene />
+            {/* Neon bus */}
+            <div className="relative w-full max-w-md sm:max-w-lg">
+              <NeonBusScene />
             </div>
 
             {/* Progress */}
-            <div className="relative mt-6 w-full max-w-xs">
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-ink-200/70 dark:bg-white/10">
+            <div className="relative -mt-2 w-full max-w-xs">
+              <div className="h-[3px] w-full overflow-hidden rounded-full bg-white/10">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-saffron-500 to-crimson-600 transition-[width] duration-200 ease-out"
+                  className="h-full rounded-full bg-gradient-to-r from-royal-400 via-gold-400 to-gold-200 shadow-[0_0_12px_rgba(233,173,69,0.75)] transition-[width] duration-200 ease-out"
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              <div className="mt-3 flex items-center justify-between text-xs text-ink-500 dark:text-ink-400">
+              <div className="mt-3 flex items-center justify-between text-xs text-white/45">
                 <span className="uppercase tracking-[0.2em]">Preparing your journey</span>
-                <span className="tabular-nums font-medium text-ink-700 dark:text-ink-200">{Math.round(progress)}%</span>
+                <span className="tabular-nums font-medium text-gold-300">{Math.round(progress)}%</span>
               </div>
             </div>
 

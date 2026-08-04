@@ -49,6 +49,32 @@ const config: Config = {
           950: "#0b1330",
         },
         cream: "#fdfaf5",
+        // Brand palette taken from the badge: deep purple disc, gold bus.
+        royal: {
+          50: "#f8f4fb",
+          100: "#efe3f6",
+          200: "#dfc7ec",
+          300: "#c69ddc",
+          400: "#a86cc7",
+          500: "#8b45ac",
+          600: "#72308f",
+          700: "#5a1e72",
+          800: "#4a1a5e",
+          900: "#3a1449",
+          950: "#1c0a24",
+        },
+        gold: {
+          50: "#fdf9ef",
+          100: "#faf0d3",
+          200: "#f4dc9d",
+          300: "#efc667",
+          400: "#e9ad45",
+          500: "#e3a33c",
+          600: "#c4842c",
+          700: "#9d6524",
+          800: "#7d4f24",
+          900: "#674222",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
@@ -67,6 +93,11 @@ const config: Config = {
         "bus-bob": "busBob 0.9s ease-in-out infinite",
         "scenery": "scenery 5s linear infinite",
         "exhaust": "exhaust 1.2s ease-out infinite",
+        // Neon loader. Durations are overridden per-element for variety.
+        "smog-drift": "smogDrift 2.8s ease-out infinite",
+        "speed-streak": "speedStreak 2s linear infinite",
+        "road-flow": "roadFlow 0.85s linear infinite",
+        "neon-flicker": "neonFlicker 4.5s ease-in-out infinite",
       },
       keyframes: {
         fadeUp: {
@@ -118,6 +149,29 @@ const config: Config = {
         exhaust: {
           "0%": { opacity: "0.5", transform: "translate(0,0) scale(0.6)" },
           "100%": { opacity: "0", transform: "translate(-22px,-10px) scale(1.5)" },
+        },
+        // Neon loader: smog billows off the rear wheel, drifting back and up.
+        smogDrift: {
+          "0%": { opacity: "0", transform: "translate(0px, 0px) scale(0.35)" },
+          "14%": { opacity: "var(--smog-peak, 0.45)" },
+          "100%": { opacity: "0", transform: "translate(-150px, -34px) scale(2.4)" },
+        },
+        // Neon loader: streaks flying past the bus.
+        speedStreak: {
+          "0%": { opacity: "0", transform: "translateX(70px)" },
+          "18%": { opacity: "0.75" },
+          "100%": { opacity: "0", transform: "translateX(-300px)" },
+        },
+        // Neon loader: lane markings flow toward the viewer (34+26 = 60 period).
+        roadFlow: {
+          "0%": { strokeDashoffset: "0" },
+          "100%": { strokeDashoffset: "60" },
+        },
+        // Neon loader: the tube settling after it powers on.
+        neonFlicker: {
+          "0%, 38%, 44%, 100%": { opacity: "1" },
+          "41%": { opacity: "0.82" },
+          "47%": { opacity: "0.9" },
         },
       },
       backgroundImage: {

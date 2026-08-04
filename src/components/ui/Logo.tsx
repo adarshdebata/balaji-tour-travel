@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { BajrangbaliMark } from "@/components/ui/BajrangbaliMark";
+import { BusBadge } from "@/components/ui/BusBadge";
 
 interface LogoProps {
   className?: string;
@@ -13,10 +13,10 @@ export function Logo({ className, variant = "default" }: LogoProps) {
   return (
     <Link href="/" className={cn("group inline-flex items-center gap-3", className)}>
       <div className="relative shrink-0">
-        <BajrangbaliMark
+        <BusBadge
           idSuffix={isWhite ? "logo-white" : "logo"}
           className={cn(
-            "h-11 w-11 rounded-full shadow-lg ring-1 ring-saffron-300/40",
+            "h-11 w-11 rounded-full shadow-lg ring-1 ring-gold-400/40",
             "transition-transform duration-500 group-hover:rotate-[8deg]",
           )}
         />
@@ -33,7 +33,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
         <span
           className={cn(
             "text-[10px] font-medium uppercase tracking-[0.22em]",
-            isWhite ? "text-saffron-200" : "text-saffron-700 dark:text-saffron-400",
+            isWhite ? "text-gold-200" : "text-royal-700 dark:text-gold-400",
           )}
         >
           Tour &amp; Travel Line

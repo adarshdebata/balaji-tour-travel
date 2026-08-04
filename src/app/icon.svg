@@ -1,23 +1,37 @@
-<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Balaji Bajrangbali emblem">
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Balaji Tour &amp; Travel Line">
   <defs>
-    <linearGradient id="d" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ff9d3a"/>
-      <stop offset="55%" stop-color="#ff7e15"/>
-      <stop offset="100%" stop-color="#dc2626"/>
-    </linearGradient>
-    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fef3c7"/>
-      <stop offset="100%" stop-color="#f6c453"/>
-    </linearGradient>
+    <clipPath id="c">
+      <circle cx="32" cy="32" r="32"/>
+    </clipPath>
   </defs>
-  <circle cx="32" cy="32" r="31" fill="url(#d)"/>
-  <circle cx="32" cy="32" r="30" fill="none" stroke="#fff7ed" stroke-opacity="0.55" stroke-width="1.4"/>
-  <g fill="#f59e0b" stroke="#9e3811" stroke-width="0.7" stroke-linejoin="round">
-    <path d="M24 20 L27 12 L30.5 17.5 L34 9 L37.5 17.5 L41 12 L44 20 Z"/>
-    <rect x="24" y="19" width="20" height="3" rx="1.2"/>
+  <circle cx="32" cy="32" r="32" fill="#5a1e72"/>
+  <circle cx="32" cy="32" r="28.4" fill="none" stroke="#ffffff" stroke-width="1.1"/>
+  <g fill="#ffffff">
+    <circle cx="32" cy="14.6" r="3.3"/>
+    <circle cx="17.6" cy="21.6" r="2.2"/>
+    <circle cx="20.4" cy="20.3" r="2.9"/>
+    <circle cx="23.2" cy="21.6" r="2.2"/>
+    <rect x="17" y="21.2" width="6.9" height="2.6" rx="1.3"/>
+    <circle cx="40.8" cy="21.6" r="2.2"/>
+    <circle cx="43.6" cy="20.3" r="2.9"/>
+    <circle cx="46.4" cy="21.6" r="2.2"/>
+    <rect x="40.2" y="21.2" width="6.9" height="2.6" rx="1.3"/>
   </g>
-  <circle cx="34" cy="8" r="1.8" fill="#fde68a" stroke="#9e3811" stroke-width="0.5"/>
-  <path d="M38 47 C 30 47, 25 44.5, 23.5 39 C 22.8 37.5, 20 37, 17 35 C 14 33.4, 14 30.6, 17.2 29.6 L 22 28.8 C 22.6 26.6, 23 24.6, 26 23.4 C 27 20, 30 18.4, 34 18.4 C 40 18.4, 44 23, 44 30.5 C 44 39, 42.4 45, 38 47 Z" fill="url(#f)" stroke="#9e3811" stroke-width="0.9" stroke-linejoin="round"/>
-  <path d="M28.4 23.8 q1.4 4 0 8 q-1.4 -4 0 -8 Z" fill="#b91c1c"/>
-  <circle cx="29.6" cy="29.4" r="1.1" fill="#3a3e46"/>
+  <g clip-path="url(#c)">
+    <line x1="0" y1="46.4" x2="64" y2="46.4" stroke="#ffffff" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(12 25.6) scale(0.2)" fill="none" stroke="#e3a33c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M44 36 v-6 a16 16 0 0 1 16 -16 h80 a16 16 0 0 1 16 16 v6"/>
+    <rect x="14" y="34" width="172" height="50" rx="16"/>
+    <rect x="54" y="48" width="86" height="26" rx="6"/>
+    <line x1="82" y1="48" x2="82" y2="74"/>
+    <line x1="110" y1="48" x2="110" y2="74"/>
+    <rect x="150" y="48" width="26" height="26" rx="6"/>
+    <circle cx="120" cy="79" r="2"/>
+    <circle cx="170" cy="79" r="2.5"/>
+    <circle cx="62" cy="90" r="14"/>
+    <circle cx="62" cy="90" r="5"/>
+    <circle cx="146" cy="90" r="14"/>
+    <circle cx="146" cy="90" r="5"/>
+  </g>
 </svg>
