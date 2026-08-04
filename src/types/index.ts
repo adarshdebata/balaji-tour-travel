@@ -1,7 +1,7 @@
 export interface Vehicle {
   id: string;
   name: string;
-  category: "suv" | "luxury" | "tempo-traveller" | "luxury-coach";
+  category: "suv" | "luxury" | "tempo-traveller" | "Mini-Bus" | "luxury-coach";
   image: string;
   seating: number;
   luggage: string;
