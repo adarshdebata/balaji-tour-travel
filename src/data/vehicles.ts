@@ -60,8 +60,8 @@ export const VEHICLES: Vehicle[] = [
   },
   // Luxury
   {
-    id: "fortuner",
-    name: "Toyota Fortuner",
+    id: "BMW",
+    name: "BMW 340i",
     category: "luxury",
     image: "https://unsplash.com/photos/a-white-car-parked-on-a-dirt-road-with-trees-and-a-building-in-the-background-9Px9UR-wZkQ",
     seating: 7,
