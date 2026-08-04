@@ -68,7 +68,7 @@ export function VehicleCard({ vehicle, index = 0 }: VehicleCardProps) {
         </div>
 
         <ul className="mt-5 space-y-2">
-          {vehicle.features.slice(0, 4).map((feature) => (
+          {vehicle.features.slice(0, 8).map((feature) => (
             <li key={feature} className="flex items-start gap-2 text-sm text-ink-700 dark:text-ink-300">
               <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-saffron-600 dark:text-saffron-400" />
               <span>{feature}</span>
