@@ -3,12 +3,12 @@ import { VehicleCard } from "@/components/ui/VehicleCard";
 import { getVehiclesByCategory } from "@/data/vehicles";
 
 export const metadata = {
-  title: "SUV Fleet",
+  title: "Luxury Fleet",
   description:
     "Toyota Fortuner, Innova Crysta, and Maruti Ertiga — premium SUVs for executive travel and small group journeys.",
 };
 
-export default function SuvFleetPage() {
+export default function LuxuryFleetPage() {
   const vehicles = getVehiclesByCategory("luxury");
 
   return (
