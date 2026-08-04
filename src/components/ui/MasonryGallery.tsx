@@ -4,7 +4,7 @@
    CDN URLs that are already served at the requested width, and the site is a
    static export, so next/image has no optimizer to run. */
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -27,8 +27,20 @@ interface MasonryGalleryProps {
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 6;
 
+/** How many photos are mounted per batch as the visitor scrolls. */
+const BATCH_SIZE = 100;
+
 /** Width/height ratios used to give each skeleton its own Pinterest-ish box. */
 const SKELETON_RATIOS = [0.75, 1, 0.8, 1.33, 0.67, 1.15, 0.85, 1.5];
+
+/** Mirrors the Tailwind breakpoints the grid used before it was JS-driven. */
+const COLUMN_BREAKPOINTS = [
+  { minWidth: 1280, columns: 4 },
+  { minWidth: 1024, columns: 3 },
+  { minWidth: 640, columns: 2 },
+  { minWidth: 0, columns: 1 },
+];
+const DEFAULT_COLUMNS = 4;
 
 /** Deterministic per-image pick, so server and client render the same box. */
 function hashString(value: string): number {
@@ -39,8 +51,56 @@ function hashString(value: string): number {
   return Math.abs(hash);
 }
 
+function skeletonRatio(id: string): number {
+  return SKELETON_RATIOS[hashString(id) % SKELETON_RATIOS.length];
+}
+
 function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
+}
+
+/** Tracks the viewport-appropriate column count, starting from the SSR default. */
+function useColumnCount(): number {
+  const [columns, setColumns] = useState(DEFAULT_COLUMNS);
+
+  useEffect(() => {
+    const measure = () => {
+      const match = COLUMN_BREAKPOINTS.find((bp) => window.innerWidth >= bp.minWidth);
+      setColumns(match?.columns ?? DEFAULT_COLUMNS);
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  return columns;
+}
+
+/**
+ * Greedy shortest-column packing over each image's *estimated* height.
+ *
+ * CSS `columns` cannot be used here: it re-balances every item whenever the
+ * list grows, so appending a batch would visibly reshuffle photos the visitor
+ * has already scrolled past. Because the estimate is a pure function of the
+ * image id and items are placed in order, this pass is prefix-stable — adding
+ * a batch only ever appends, and never moves what is already on screen.
+ */
+function distributeIntoColumns(images: GalleryItem[], columnCount: number): number[][] {
+  const columns: number[][] = Array.from({ length: columnCount }, () => []);
+  const heights = new Array<number>(columnCount).fill(0);
+
+  images.forEach((image, index) => {
+    let shortest = 0;
+    for (let i = 1; i < columnCount; i += 1) {
+      if (heights[i] < heights[shortest]) shortest = i;
+    }
+
+    columns[shortest].push(index);
+    heights[shortest] += 1 / skeletonRatio(image.id); // height per unit of width
+  });
+
+  return columns;
 }
 
 /**
@@ -59,9 +119,7 @@ function GalleryTile({
 }) {
   const [loaded, setLoaded] = useState(false);
   const [src, setSrc] = useState(img.src);
-  const [ratio, setRatio] = useState(
-    () => SKELETON_RATIOS[hashString(img.id) % SKELETON_RATIOS.length],
-  );
+  const [ratio, setRatio] = useState(() => skeletonRatio(img.id));
   const imgRef = useRef<HTMLImageElement>(null);
 
   const handleLoad = useCallback(() => {
@@ -405,8 +463,64 @@ function Lightbox({
   );
 }
 
+/** Placeholder cards that hold the next batch's space while it loads. */
+function BatchSkeleton({ columnCount }: { columnCount: number }) {
+  return (
+    <div className="mt-4 flex gap-4" aria-hidden="true">
+      {Array.from({ length: columnCount }).map((_, column) => (
+        <div key={column} className="flex min-w-0 flex-1 flex-col gap-4">
+          {Array.from({ length: 2 }).map((__, row) => (
+            <span
+              key={row}
+              className="skeleton block w-full rounded-2xl"
+              style={{ aspectRatio: SKELETON_RATIOS[(column * 2 + row) % SKELETON_RATIOS.length] }}
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function MasonryGallery({ images, className }: MasonryGalleryProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  const columnCount = useColumnCount();
+  const sentinelRef = useRef<HTMLDivElement>(null);
+
+  const visible = images.slice(0, visibleCount);
+  const hasMore = visibleCount < images.length;
+  const columns = useMemo(
+    () => distributeIntoColumns(visible, columnCount),
+    // `visible` is a fresh slice each render; its length is what actually changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [images, visibleCount, columnCount],
+  );
+
+  const loadMore = useCallback(
+    () => setVisibleCount((count) => Math.min(count + BATCH_SIZE, images.length)),
+    [images.length],
+  );
+
+  // Start over if the gallery is handed a different set of photos.
+  useEffect(() => setVisibleCount(BATCH_SIZE), [images]);
+
+  // Pull in the next batch shortly before the visitor reaches the end. Re-created
+  // per batch so a sentinel that is still on screen keeps feeding the grid.
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!hasMore || !sentinel) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) loadMore();
+      },
+      { rootMargin: "800px 0px" },
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [hasMore, visibleCount, loadMore]);
 
   const close = useCallback(() => setLightboxIndex(null), []);
   const prev = useCallback(
@@ -433,16 +547,34 @@ export function MasonryGallery({ images, className }: MasonryGalleryProps) {
 
   return (
     <>
-      <div
-        className={cn(
-          "columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4 [&>*]:mb-4",
-          className,
-        )}
-      >
-        {images.map((img, i) => (
-          <GalleryTile key={img.id} img={img} index={i} onOpen={() => setLightboxIndex(i)} />
+      <div className={cn("flex gap-4", className)}>
+        {columns.map((column, columnIndex) => (
+          <div key={columnIndex} className="flex min-w-0 flex-1 flex-col gap-4">
+            {column.map((imageIndex) => (
+              <GalleryTile
+                key={images[imageIndex].id}
+                img={images[imageIndex]}
+                index={imageIndex}
+                onOpen={() => setLightboxIndex(imageIndex)}
+              />
+            ))}
+          </div>
         ))}
       </div>
+
+      {hasMore && (
+        <div ref={sentinelRef}>
+          <BatchSkeleton columnCount={columnCount} />
+          <div className="mt-6 flex justify-center">
+            <button
+              onClick={loadMore}
+              className="rounded-full bg-ink-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-ink-700 dark:bg-white/10 dark:ring-1 dark:ring-white/20 dark:hover:bg-white/20"
+            >
+              Load more photos · {images.length - visibleCount} left
+            </button>
+          </div>
+        </div>
+      )}
 
       <AnimatePresence>
         {lightboxIndex !== null && (

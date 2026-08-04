@@ -31,6 +31,10 @@ export interface DriveImage {
   /** Used if the CDN host rejects the request. */
   fallback: string;
   alt: string;
+  /** Original Drive filename, kept for sorting. */
+  name: string;
+  /** Sort key derived from the filename, or null when it carries no date. */
+  takenAt: number | null;
 }
 
 /**
@@ -86,6 +90,48 @@ function toAltText(filename: string, index: number): string {
 }
 
 /**
+ * Drive's embedded view always returns entries filename-ascending and ignores
+ * every sort parameter, so "newest first" has to come from the filenames — the
+ * only date signal in the response. Both schemes in use encode the capture day:
+ *
+ *   IMG-20250605-WA0250.jpg   WhatsApp: day + a per-day sequence number
+ *   20260108_145742.jpg       camera roll: day + HHMMSS
+ *
+ * Returns a descending-comparable key, or null when no date is present.
+ */
+function timestampFromName(filename: string): number | null {
+  const day = filename.match(/(20\d{2})[-_]?(0[1-9]|1[0-2])[-_]?(0[1-9]|[12]\d|3[01])/);
+  if (!day) return null;
+
+  const [, year, month, date] = day;
+  const withinDay =
+    filename.match(/\d{8}[-_ ]?(\d{2})(\d{2})(\d{2})/)?.slice(1).join("") ??
+    filename.match(/WA(\d{4,})/i)?.[1] ??
+    "0";
+
+  // Day dominates; the within-day part only ever separates files from the same
+  // day, which in practice all share one naming scheme.
+  return Number(`${year}${month}${date}`) * 1e7 + Number(withinDay);
+}
+
+/**
+ * Newest first. Files with no date in the name are treated as the most recent
+ * additions (a freshly uploaded photo given a custom name is the common case)
+ * and sort above the dated ones.
+ */
+function byNewestFirst(a: DriveImage, b: DriveImage): number {
+  const aTime = a.takenAt;
+  const bTime = b.takenAt;
+
+  if (aTime === null && bTime === null) return b.name.localeCompare(a.name);
+  if (aTime === null) return -1;
+  if (bTime === null) return 1;
+  if (aTime !== bTime) return bTime - aTime;
+
+  return b.name.localeCompare(a.name);
+}
+
+/**
  * Each entry in the embedded view looks like:
  *   <div class="flip-entry" id="entry-<FILE_ID>"> … <div class="flip-entry-title">name.jpg</div>
  */
@@ -105,14 +151,19 @@ export function parseDriveFolderHtml(html: string): DriveImage[] {
 
     images.push({
       id,
+      name,
+      takenAt: timestampFromName(name),
       src: cdnUrl(id, 1000),
       full: cdnUrl(id, 2400),
       fallback: thumbnailUrl(id, 1600),
-      alt: toAltText(name, images.length),
+      alt: "",
     });
   }
 
-  return images;
+  // Alt text is numbered after sorting so "photo 1" is the first one on screen.
+  return images
+    .sort(byNewestFirst)
+    .map((image, index) => ({ ...image, alt: toAltText(image.name, index) }));
 }
 
 /**
