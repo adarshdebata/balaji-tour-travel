@@ -118,6 +118,8 @@ export function Hero() {
               <span className="h-1 w-1 rounded-full bg-ink-400" />
               <span>SUV Rentals</span>
               <span className="h-1 w-1 rounded-full bg-ink-400" />
+              <span>Mini Bus</span>
+              <span className="h-1 w-1 rounded-full bg-ink-400" />
               <span>Luxury Coaches</span>
             </motion.div>
           </div>
