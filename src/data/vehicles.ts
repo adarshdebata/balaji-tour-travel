@@ -151,7 +151,7 @@ export const VEHICLES: Vehicle[] = [
     id: "coach-53",
     name: "53-Seater Volvo Coach",
     category: "luxury-coach",
-    image: "https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/9600_15m_sleeper_FR_01a_hires-nbg?qlt=82&wid=1440&ts=1659609410809&dpr=off&fit=constrain",
+    image: "https://images.unsplash.com/photo-1785836867052-6fad9a7b3c82?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     seating: 53,
     luggage: "Twin luggage bays",
     ac: true,
