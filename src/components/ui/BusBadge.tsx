@@ -26,7 +26,7 @@ export function BusBadge({
       role="img"
       aria-label={title}
       className={cn("block", className)}
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
     >
       <defs>
         <clipPath id={clip}>
