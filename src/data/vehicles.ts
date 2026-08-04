@@ -58,6 +58,64 @@ export const VEHICLES: Vehicle[] = [
     description:
       "A nimble crossover that fits city lanes without compromising on comfort. Ideal for smaller groups and short tours.",
   },
+  // Luxury
+  {
+    id: "fortuner",
+    name: "Toyota Fortuner",
+    category: "luxury",
+    image: "https://unsplash.com/photos/a-white-car-parked-on-a-dirt-road-with-trees-and-a-building-in-the-background-9Px9UR-wZkQ",
+    seating: 7,
+    luggage: "4 large bags",
+    ac: true,
+    features: ["Push-start ignition", "Leather interiors", "Touchscreen infotainment", "Cruise control", "Hill-assist", "Sunroof"],
+    pricePerKm: 22,
+    pricePerDay: 6500,
+    description:
+      "Commanding road presence with premium comfort. The Fortuner is built for highways, hill passes, and everything in between.",
+  },
+  {
+    id: "hyryder",
+    name: "Toyota Urban Cruiser Hyryder",
+    category: "luxury",
+    image: "https://images.unsplash.com/photo-1615887110697-0819ec23465f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    seating: 7,
+    luggage: "4 large bags",
+    ac: true,
+    features: ["Push-start ignition", "Leather interiors", "Touchscreen infotainment", "Cruise control", "Hill-assist", "Sunroof"],
+    pricePerKm: 22,
+    pricePerDay: 6500,
+    description:
+      "Commanding road presence with premium comfort. The Fortuner is built for highways, hill passes, and everything in between.",
+  },
+  {
+    id: "innova-crysta",
+    name: "Toyota Innova Crysta",
+    category: "luxury",
+    image: "https://images.unsplash.com/photo-1748215210939-ad8b6c8c086d?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    seating: 7,
+    luggage: "3 large bags",
+    ac: true,
+    features: ["Captain seats (middle row)", "USB charging ports", "Roof-mount AC vents", "Plush legroom", "Soft suspension"],
+    pricePerKm: 18,
+    pricePerDay: 5500,
+    description:
+      "The most trusted choice for family tours and corporate travel. Smooth, spacious, and reliable mile after mile.",
+  },
+  {
+    id: "ertiga",
+    name: "Maruti Ertiga",
+    category: "luxury",
+    image: "https://imgd.aeplcdn.com/370x208/n/c6es93a_1572125.jpg?q=80",
+    seating: 6,
+    luggage: "2 large bags",
+    ac: true,
+    features: ["Compact yet spacious", "Fuel efficient", "Rear AC vents", "Easy maneuverability", "Touchscreen audio"],
+    pricePerKm: 14,
+    pricePerDay: 4000,
+    description:
+      "A nimble crossover that fits city lanes without compromising on comfort. Ideal for smaller groups and short tours.",
+  },
+
 
   // Tempo Travellers
   {
