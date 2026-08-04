@@ -155,7 +155,7 @@ export const VEHICLES: Vehicle[] = [
     seating: 53,
     luggage: "Twin luggage bays",
     ac: true,
-    features: ["Pneumatic suspension", "Cabin-class seating", "Wi-Fi enabled", "Onboard refreshments", "Trained co-pilot", "Surveillance cameras"],
+    features: ["Pneumatic suspension", "Cabin-class seating", "Wi-Fi enabled", "Fully Air-conditioned", "Trained co-pilot", "Surveillance cameras", "Spacious Leg Room", "Charging Point"],
     pricePerKm: 62,
     pricePerDay: 22000,
     description:
