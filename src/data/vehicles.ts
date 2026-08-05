@@ -35,7 +35,7 @@ export const VEHICLES: Vehicle[] = [
     id: "ertiga",
     name: "Maruti Ertiga",
     category: "suv",
-    image: "https://imgd.aeplcdn.com/370x208/n/c6es93a_1572125.jpg?q=80",
+    image: "https://images.unsplash.com/photo-1785916622854-b734cd759d79?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D",
     seating: 6,
     luggage: "2–3 Medium Bags",
     ac: true,
