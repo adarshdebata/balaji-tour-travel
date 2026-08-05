@@ -2,25 +2,12 @@ import type { Vehicle } from "@/types";
 
 export const VEHICLES: Vehicle[] = [
   // SUVs
-  //{
-    id: "fortuner",
-    name: "Toyota Fortuner",
-    category: "suv",
-    image: "https://unsplash.com/photos/a-white-car-parked-on-a-dirt-road-with-trees-and-a-building-in-the-background-9Px9UR-wZkQ",
-    seating: 7,
-    luggage: "4 large bags",
-    ac: true,
-    features: ["Push-start ignition", "Leather interiors", "Touchscreen infotainment", "Cruise control", "Hill-assist", "Sunroof"],
-    pricePerKm: 22,
-    pricePerDay: 6500,
-    description:
-      "Commanding road presence with premium comfort. The Fortuner is built for highways, hill passes, and everything in between.",
-  },//
+ 
   {
     id: "hyryder",
     name: "Toyota Urban Cruiser Hyryder",
     category: "suv",
-    image: "https://images.unsplash.com/photo-1615887110697-0819ec23465f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1785909129321-7c1788772574?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D",
     seating: 5,
     luggage: "2–3 Medium Bags",
     ac: true,
