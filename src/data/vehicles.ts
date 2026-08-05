@@ -27,7 +27,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Captain seats (middle row)", "USB charging ports", "Roof-mount AC vents", "Plush legroom", "Soft suspension"],
     pricePerKm: 18,
-    pricePerDay: 5500,
+    pricePerHrs: 5500,
     description:
       "The most trusted choice for family tours and corporate travel. Smooth, spacious, and reliable mile after mile.",
   },
@@ -41,7 +41,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Compact yet spacious", "Fuel efficient", "Rear AC vents", "Easy maneuverability", "Touchscreen audio"],
     pricePerKm: 14,
-    pricePerDay: 4000,
+    pricePerHrs: 4000,
     description:
       "A nimble crossover that fits city lanes without compromising on comfort. Ideal for smaller groups and short tours.",
   },
@@ -56,7 +56,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Push-start ignition", "Leather interiors", "Touchscreen infotainment", "Cruise control", "Hill-assist", "Sunroof"],
     pricePerKm: 22,
-    pricePerDay: 6500,
+    pricePerHrs: 6500,
     description:
       "Commanding road presence with premium comfort. The Fortuner is built for highways, hill passes, and everything in between.",
   },
@@ -70,7 +70,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Push-start ignition", "Leather interiors", "Touchscreen infotainment", "Cruise control", "Hill-assist", "Sunroof"],
     pricePerKm: 22,
-    pricePerDay: 6500,
+    pricePerHrs: 6500,
     description:
       "Commanding road presence with premium comfort. The Fortuner is built for highways, hill passes, and everything in between.",
   },
@@ -84,7 +84,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Captain seats (middle row)", "USB charging ports", "Roof-mount AC vents", "Plush legroom", "Soft suspension"],
     pricePerKm: 18,
-    pricePerDay: 5500,
+    pricePerHrs: 5500,
     description:
       "The most trusted choice for family tours and corporate travel. Smooth, spacious, and reliable mile after mile.",
   },
@@ -98,7 +98,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Compact yet spacious", "Fuel efficient", "Rear AC vents", "Easy maneuverability", "Touchscreen audio"],
     pricePerKm: 14,
-    pricePerDay: 4000,
+    pricePerHrs: 4000,
     description:
       "A nimble crossover that fits city lanes without compromising on comfort. Ideal for smaller groups and short tours.",
   },
@@ -115,7 +115,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["2x1 push-back seats", "LED reading lights", "Roof AC ducting", "Music system", "First-aid kit", "Curtains"],
     pricePerKm: 32,
-    pricePerDay: 9500,
+    pricePerHrs: 9500,
     description:
       "Our most popular tour coach. Designed for large families, college trips, and pilgrimages where comfort defines the journey.",
   },
@@ -129,7 +129,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Captain reclining seats", "Wide windows", "Centralized AC", "Premium upholstery", "Bluetooth audio"],
     pricePerKm: 26,
-    pricePerDay: 7500,
+    pricePerHrs: 7500,
     description:
       "A balanced sweet spot for mid-sized groups. Premium feel, agile on hills, and comfortable on long highways.",
   },
@@ -143,7 +143,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Business-class seats", "Climate-controlled cabin", "Mood lighting", "USB charging per seat", "Privacy curtains", "Bose-quality audio"],
     pricePerKm: 38,
-    pricePerDay: 12000,
+    pricePerHrs: 12000,
     description:
       "The flagship of premium group travel. Lounge-style seating, monocoque chassis, and a ride quality that feels closer to a luxury sedan.",
   },
@@ -157,7 +157,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Business-class seats", "Climate-controlled cabin", "Mood lighting", "USB charging per seat", "Privacy curtains", "Bose-quality audio"],
     pricePerKm: 38,
-    pricePerDay: 12000,
+    pricePerHrs: 12000,
     description:
       "The flagship of premium group travel. Lounge-style seating, monocoque chassis, and a ride quality that feels closer to a luxury sedan.",
   },
@@ -174,7 +174,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Pneumatic suspension", "Cabin-class seating", "Wi-Fi enabled", "Onboard refreshments", "Trained co-pilot", "Surveillance cameras"],
     pricePerKm: 62,
-    pricePerDay: 22000,
+    pricePerHrs: 22000,
     description:
       "The gold standard for premium group travel. Volvo's signature ride comfort across every kilometer of your route.",
   },
@@ -188,7 +188,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["2x2 reclining seats", "Onboard washroom (optional)", "PA system", "LED TV", "Refrigerator", "Curtains"],
     pricePerKm: 48,
-    pricePerDay: 16000,
+    pricePerHrs: 16000,
     description:
       "Built for weddings, corporate offsites, and large pilgrimage groups. A first-class experience on wheels.",
   },
@@ -202,7 +202,7 @@ export const VEHICLES: Vehicle[] = [
     ac: true,
     features: ["Pneumatic suspension", "Cabin-class seating", "Wi-Fi enabled", "Fully Air-conditioned", "Trained co-pilot", "Surveillance cameras", "Spacious Leg Room", "Charging Point"],
     pricePerKm: 62,
-    pricePerDay: 22000,
+    pricePerHrs: 22000,
     description:
       "The gold standard for premium group travel. Volvo's signature ride comfort across every kilometer of your route.",
   },
