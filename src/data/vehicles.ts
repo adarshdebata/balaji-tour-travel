@@ -25,7 +25,7 @@ export const VEHICLES: Vehicle[] = [
     seating: 7,
     luggage: "3–4 Medium Bags*",
     ac: true,
-    features: ["Premium SUV", "Front & Rear AC", "USB charging ports", "Roof-mount AC vents", "Plush legroom", "Soft suspension", "Spacious Premium Seating"],
+    features: ["Premium SUV", "Front & Rear AC", "USB charging ports", "Roof-mount AC vents", "Plush legroom", "Soft suspension"],
     pricePerKm: 18,
     pricePerHrs: 209,
     description:
