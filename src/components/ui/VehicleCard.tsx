@@ -40,8 +40,8 @@ export function VehicleCard({ vehicle, index = 0 }: VehicleCardProps) {
           <div className="text-right shrink-0">
             <p className="text-[10px] uppercase tracking-[0.18em] text-ink-400 dark:text-ink-500">From</p>
             <p className="font-display text-xl text-saffron-700 dark:text-saffron-300">
-              {formatPrice(vehicle.pricePerDay)}
-              <span className="text-xs text-ink-500 dark:text-ink-400">/day</span>
+              {formatPrice(vehicle.pricePerHrs)}
+              <span className="text-xs text-ink-500 dark:text-ink-400">/hr</span>
             </p>
           </div>
         </div>
