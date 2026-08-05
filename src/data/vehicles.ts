@@ -37,13 +37,13 @@ export const VEHICLES: Vehicle[] = [
     category: "suv",
     image: "https://imgd.aeplcdn.com/370x208/n/c6es93a_1572125.jpg?q=80",
     seating: 6,
-    luggage: "2 large bags",
+    luggage: "2–3 Medium Bags",
     ac: true,
-    features: ["Compact yet spacious", "Fuel efficient", "Rear AC vents", "Easy maneuverability", "Touchscreen audio"],
+    features: ["Compact yet spacious", "Fuel efficient", "Front & Rear AC", "Easy maneuverability", "Comfortable 3-Row Seating", "6–7 Passengers"],
     pricePerKm: 14,
-    pricePerHrs: 4000,
+    pricePerHrs: 149,
     description:
-      "A nimble crossover that fits city lanes without compromising on comfort. Ideal for smaller groups and short tours.",
+      "Comfortable and economical, the Maruti Suzuki Ertiga is an ideal choice for small groups and family trips, offering spacious 3-row seating and a smooth travel experience.",
   },
   // Luxury
   {
