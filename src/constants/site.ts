@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
 export const CONTACT = {
   phonePrimary: "+91 92105 06300",
   phoneSecondary: "+91 98915 06300",
-  whatsapp: "+91 92105 06300",
+  whatsapp: "+91 98915 06300",
   email: "balajitourandtravelline@gmail.com",
   address: {
     line1: "Axis Bank ATM, Swati Public School Building, D-1/41, Block D, New Kondli, Kondli",
