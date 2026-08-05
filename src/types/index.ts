@@ -8,7 +8,7 @@ export interface Vehicle {
   ac: boolean;
   features: string[];
   pricePerKm: number;
-  pricePerDay: number;
+  pricePerHrs: number;
   description: string;
 }
 
