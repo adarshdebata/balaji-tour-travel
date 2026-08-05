@@ -122,7 +122,7 @@ export const VEHICLES: Vehicle[] = [
     id: "tt-20",
     name: "Traveller 20 Seater",
     category: "tempo-traveller",
-    image: "https://www.forcemotors.com/wp-content/uploads/2025/02/Traveller-4020WB-CNG-salient-new.png",
+    image: "https://images.unsplash.com/photo-1785834651440-9523d25317d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8fA%3D%3D",
     seating: 20,
     luggage: "Roof carrier + boot",
     ac: true,
