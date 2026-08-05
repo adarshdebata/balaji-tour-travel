@@ -15,7 +15,7 @@ export const VEHICLES: Vehicle[] = [
     pricePerKm: 16,
     pricePerHrs: 188,
     description:
-      "“Travel in comfort and style with our Toyota Urban Cruiser Hyryder. A premium 5-seater SUV ideal for corporate travel, airport transfers, local journeys and outstation trips.”",
+      "Travel in comfort and style with our Toyota Urban Cruiser Hyryder. A premium 5-seater SUV ideal for corporate travel, airport transfers, local journeys and outstation trips.",
   },
   {
     id: "innova-crysta",
@@ -23,13 +23,13 @@ export const VEHICLES: Vehicle[] = [
     category: "suv",
     image: "https://images.unsplash.com/photo-1748215210939-ad8b6c8c086d?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     seating: 7,
-    luggage: "3 large bags",
+    luggage: "3–4 Medium Bags*",
     ac: true,
-    features: ["Captain seats (middle row)", "USB charging ports", "Roof-mount AC vents", "Plush legroom", "Soft suspension"],
+    features: ["Premium SUV", "Front & Rear AC", "USB charging ports", "Roof-mount AC vents", "Plush legroom", "Soft suspension", "Spacious Premium Seating"],
     pricePerKm: 18,
-    pricePerHrs: 5500,
+    pricePerHrs: 209,
     description:
-      "The most trusted choice for family tours and corporate travel. Smooth, spacious, and reliable mile after mile.",
+      "Experience premium comfort with our Toyota Innova Crysta. With spacious seating, excellent ride comfort and ample luggage space, it is an ideal choice for family tours, corporate travel, airport transfers and long-distance journeys.",
   },
   {
     id: "ertiga",
