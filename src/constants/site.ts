@@ -11,6 +11,19 @@ export const SITE_CONFIG = {
   founded: 2000,
 } as const;
 
+/**
+ * Preview build. While true, every page carries a "Demo preview" ribbon and
+ * banner, and search engines are asked not to index it. Set to false at
+ * handover.
+ */
+export const DEMO_MODE = true;
+
+/** Credit shown in the footer (and the demo banner). */
+export const DEVELOPER = {
+  name: "Adarsh Kumar Debata",
+  url: "https://github.com/adarshdebata",
+} as const;
+
 export const CONTACT = {
   phonePrimary: "+91 92105 06300",
   phoneSecondary: "+91 98915 06300",
@@ -39,7 +52,8 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/fleet",
     children: [
       { label: "SUV", href: "/fleet/suv" },
-      //{ label: "Luxury SUV", href: "/fleet/Luxury" },//
+      // Hidden until the luxury lineup is final:
+      // { label: "Luxury SUV", href: "/fleet/Luxury" },
       { label: "Tempo Traveller", href: "/fleet/tempo-traveller" },
       { label: "Mini Bus", href: "/fleet/Mini-Bus" },
       { label: "Luxury Coaches", href: "/fleet/luxury-coaches" },

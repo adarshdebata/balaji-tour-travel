@@ -112,7 +112,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-12 flex items-center gap-6 text-xs uppercase tracking-[0.2em] text-ink-500 dark:text-ink-400"
+              className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-3 whitespace-nowrap text-xs uppercase tracking-[0.2em] text-ink-500 dark:text-ink-400"
             >
               <span>Tempo Traveller</span>
               <span className="h-1 w-1 rounded-full bg-ink-400" />

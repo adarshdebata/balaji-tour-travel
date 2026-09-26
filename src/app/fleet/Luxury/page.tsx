@@ -5,7 +5,7 @@ import { getVehiclesByCategory } from "@/data/vehicles";
 export const metadata = {
   title: "Luxury Fleet",
   description:
-    "Toyota Fortuner, Innova Crysta, and Maruti Ertiga — premium SUVs for executive travel and small group journeys.",
+    "Chauffeur-driven luxury cars for weddings, VIP pickups, and executive travel.",
 };
 
 export default function LuxuryFleetPage() {
@@ -15,8 +15,8 @@ export default function LuxuryFleetPage() {
     <>
       <PageHeader
         eyebrow="Our Fleet · Luxury"
-        title="SUVs that handle the highway and the hill."
-        description="Three workhorses for executive travel, family weekends, and adventures off the beaten path."
+        title="Arrive the way the occasion deserves."
+        description="Chauffeur-driven luxury cars for weddings, VIP guests, and executive travel."
       />
 
       <section className="pb-24">

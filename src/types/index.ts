@@ -8,7 +8,10 @@ export interface Vehicle {
   ac: boolean;
   features: string[];
   pricePerKm: number;
-  pricePerHrs: number;
+  /** Hourly rate. The card shows this when it is set… */
+  pricePerHrs?: number;
+  /** …otherwise the full-day rate. */
+  pricePerDay?: number;
   description: string;
 }
 

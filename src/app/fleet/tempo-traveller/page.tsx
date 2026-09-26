@@ -5,7 +5,7 @@ import { getVehiclesByCategory } from "@/data/vehicles";
 export const metadata = {
   title: "Tempo Traveller Fleet",
   description:
-    "12, 17, and 20-seater Tempo Travellers including the premium Force Urbania — built for group tours, family trips, and pilgrimages.",
+    "12 to 20-seater Tempo Travellers including the premium Force Urbania — built for group tours, family trips, and pilgrimages.",
 };
 
 export default function TempoTravellerFleetPage() {

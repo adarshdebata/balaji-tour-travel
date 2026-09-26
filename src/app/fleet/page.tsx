@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bus, Car, Crown, ArrowRight } from "lucide-react";
+import { Bus, BusFront, Car, Crown, ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { VEHICLES } from "@/data/vehicles";
 
@@ -15,14 +15,21 @@ const CATEGORIES = [
     slug: "tempo-traveller",
     name: "Tempo Traveller",
     icon: Bus,
-    description: "Our signature segment — 12, 17, and 20-seater coaches for group tours.",
+    description: "Our signature segment — 12 to 20-seater coaches for group tours.",
     href: "/fleet/tempo-traveller",
   },
   {
-    slug: "luxury-coaches",
+    slug: "Mini-Bus",
+    name: "Mini Bus",
+    icon: BusFront,
+    description: "Mid-size buses for wedding baraats, school trips, and staff transport.",
+    href: "/fleet/Mini-Bus",
+  },
+  {
+    slug: "luxury-coach",
     name: "Luxury Coaches",
     icon: Crown,
-    description: "30 to 45-seater Volvo-class coaches for weddings and corporate offsites.",
+    description: "45 to 53-seater Volvo-class coaches for weddings and corporate offsites.",
     href: "/fleet/luxury-coaches",
   },
 ];
@@ -30,7 +37,7 @@ const CATEGORIES = [
 export const metadata = {
   title: "Our Fleet",
   description:
-    "Explore our complete fleet of SUVs, Tempo Travellers, and Luxury Coaches — maintained and ready for the road.",
+    "Explore our complete fleet of SUVs, Tempo Travellers, Mini Buses, and Luxury Coaches — maintained and ready for the road.",
 };
 
 export default function FleetPage() {
@@ -39,23 +46,23 @@ export default function FleetPage() {
       <PageHeader
         eyebrow="Our Fleet"
         title="Every kind of journey, every kind of vehicle."
-        description="From a 6-seater SUV to a 45-seater Volvo coach — 80+ vehicles, all maintained to the same standard."
+        description="From a 5-seater SUV to a 53-seater Volvo coach — 80+ vehicles, all maintained to the same standard."
       />
 
       <section className="pb-16">
         <div className="container-padded">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {CATEGORIES.map(({ slug, name, icon: Icon, description, href }) => {
               const count = VEHICLES.filter((v) => v.category === slug).length;
               return (
                 <Link
                   key={slug}
                   href={href}
-                  className="group relative overflow-hidden rounded-3xl bg-white p-8 ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 dark:bg-ink-900 dark:ring-white/10"
+                  className="group relative flex flex-col overflow-hidden rounded-3xl bg-white p-8 ring-1 ring-ink-200/60 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 dark:bg-ink-900 dark:ring-white/10"
                 >
                   <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-saffron-100 opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:bg-saffron-500/10" />
 
-                  <div className="relative">
+                  <div className="relative flex flex-1 flex-col">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-saffron-500 to-crimson-600 text-white shadow-lg shadow-saffron-500/30">
                       <Icon className="h-6 w-6" />
                     </div>
@@ -63,13 +70,13 @@ export default function FleetPage() {
                     <h2 className="mt-6 font-display text-3xl text-ink-900 dark:text-cream">
                       {name}
                     </h2>
-                    <p className="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
+                    <p className="mt-3 mb-8 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
                       {description}
                     </p>
 
-                    <div className="mt-8 flex items-center justify-between border-t border-ink-100 pt-5 dark:border-white/10">
+                    <div className="mt-auto flex items-center justify-between border-t border-ink-100 pt-5 dark:border-white/10">
                       <span className="text-xs uppercase tracking-[0.2em] text-saffron-700 dark:text-saffron-300">
-                        {count} vehicle{count > 1 ? "s" : ""}
+                        {count > 0 ? `${count} vehicle${count > 1 ? "s" : ""}` : "On request"}
                       </span>
                       <ArrowRight className="h-5 w-5 text-saffron-700 transition-transform group-hover:translate-x-1" />
                     </div>

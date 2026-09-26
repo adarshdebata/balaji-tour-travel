@@ -5,7 +5,7 @@ import { getVehiclesByCategory } from "@/data/vehicles";
 export const metadata = {
   title: "Luxury Coaches",
   description:
-    "30 to 45-seater premium and Volvo coaches for weddings, corporate offsites, and large pilgrimage groups.",
+    "45 to 53-seater premium and Volvo coaches for weddings, corporate offsites, and large pilgrimage groups.",
 };
 
 export default function LuxuryCoachesPage() {
@@ -21,7 +21,7 @@ export default function LuxuryCoachesPage() {
 
       <section className="pb-24">
         <div className="container-padded">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {vehicles.map((v, i) => (
               <VehicleCard key={v.id} vehicle={v} index={i} />
             ))}

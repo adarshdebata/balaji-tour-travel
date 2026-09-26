@@ -4,7 +4,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 import { PageLoader } from "@/components/ui/PageLoader";
-import { SITE_CONFIG } from "@/constants/site";
+import { DemoBanner } from "@/components/ui/DemoBanner";
+import { DEMO_MODE, SITE_CONFIG } from "@/constants/site";
 import "./globals.css";
 
 const display = Fraunces({
@@ -52,9 +53,11 @@ export const metadata: Metadata = {
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.description,
   },
+  // Keep the preview build out of search results so it never competes with
+  // the real domain once that goes live.
   robots: {
-    index: true,
-    follow: true,
+    index: !DEMO_MODE,
+    follow: !DEMO_MODE,
   },
 };
 
@@ -73,6 +76,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <PageLoader>
+          <DemoBanner />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

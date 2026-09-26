@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
-import { CONTACT, NAV_ITEMS, SITE_CONFIG } from "@/constants/site";
+import { CONTACT, DEVELOPER, NAV_ITEMS, SITE_CONFIG } from "@/constants/site";
 import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
@@ -114,7 +114,15 @@ export function Footer() {
             © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
           <p className="text-xs text-cream/50">
-            Crafted with care for travellers across India.
+            Designed &amp; developed by{" "}
+            <a
+              href={DEVELOPER.url}
+              target="_blank"
+              rel="noopener"
+              className="text-cream/75 transition-colors hover:text-saffron-200"
+            >
+              {DEVELOPER.name}
+            </a>
           </p>
         </div>
       </div>

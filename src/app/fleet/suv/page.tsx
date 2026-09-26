@@ -5,7 +5,7 @@ import { getVehiclesByCategory } from "@/data/vehicles";
 export const metadata = {
   title: "SUV Fleet",
   description:
-    "Toyota Fortuner, Innova Crysta, and Maruti Ertiga — premium SUVs for executive travel and small group journeys.",
+    "Toyota Hyryder, Innova Crysta, and Maruti Ertiga — premium SUVs for executive travel and small group journeys.",
 };
 
 export default function SuvFleetPage() {
