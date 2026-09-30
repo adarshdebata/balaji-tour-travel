@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
  * banner, and search engines are asked not to index it. Set to false at
  * handover.
  */
-export const DEMO_MODE = true;
+export const DEMO_MODE = false;
 
 /** Credit shown in the footer (and the demo banner). */
 export const DEVELOPER = {

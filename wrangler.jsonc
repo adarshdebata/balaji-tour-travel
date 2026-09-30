@@ -1,0 +1,15 @@
+// Cloudflare Workers deploy config. The site is a static export (`next build`
+// writes plain files to ./out), so this Worker only serves those files and no
+// server code runs — static asset requests are free and unlimited.
+//
+// Without this file, `wrangler deploy` auto-configures the project for OpenNext
+// (server-rendered Next.js), which fails on a static export.
+{
+  "name": "balaji-tour-travel",
+  "compatibility_date": "2026-09-26",
+  "assets": {
+    "directory": "./out",
+    // Unknown URLs get out/404.html with a real 404 status.
+    "not_found_handling": "404-page"
+  }
+}
